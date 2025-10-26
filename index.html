@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QCM Professionnel - AVK (Anti-Vitamine K)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: linear-gradient(135deg, #16213e 0%, #1a1a2e 100%);
+            max-width: 900px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.1);
+            height: 8px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%);
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .content {
+            padding: 40px;
+            background: #1a1a2e;
+        }
+
+        .question-card {
+            display: none;
+        }
+
+        .question-card.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-type {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .question-title {
+            font-size: 20px;
+            color: white;
+            margin-bottom: 25px;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .option:hover {
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+            transform: translateX(5px);
+        }
+
+        .option input[type="radio"],
+        .option input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #e74c3c;
+        }
+
+        .option.selected {
+            border-color: #e74c3c;
+            background: rgba(231, 76, 60, 0.15);
+        }
+
+        .option.correct {
+            border-color: #10b981;
+            background: rgba(16, 185, 129, 0.2);
+        }
+
+        .option.incorrect {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .option.disabled {
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+
+        .feedback {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 12px;
+            animation: slideIn 0.4s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feedback.show {
+            display: block;
+        }
+
+        .feedback.correct {
+            background: rgba(16, 185, 129, 0.2);
+            border-left: 4px solid #10b981;
+            color: #d1fae5;
+        }
+
+        .feedback.incorrect {
+            background: rgba(239, 68, 68, 0.2);
+            border-left: 4px solid #ef4444;
+            color: #fee2e2;
+        }
+
+        .feedback-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+            padding: 40px;
+            background: #1a1a2e;
+        }
+
+        .results.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            box-shadow: 0 10px 40px rgba(231, 76, 60, 0.4);
+        }
+
+        .results-title {
+            font-size: 32px;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .results-message {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+
+        .badge-excellent {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+            border: 2px solid #10b981;
+        }
+
+        .badge-good {
+            background: rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
+            border: 2px solid #3b82f6;
+        }
+
+        .badge-average {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+            border: 2px solid #f59e0b;
+        }
+
+        .badge-needs-improvement {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+            border: 2px solid #ef4444;
+        }
+
+        .practical-section {
+            display: none;
+            padding: 40px;
+            background: #1a1a2e;
+            border-top: 3px solid #e74c3c;
+        }
+
+        .practical-section.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .practical-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .practical-subtitle {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 30px;
+        }
+
+        .case-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .case-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .case-scenario {
+            background: rgba(231, 76, 60, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: #ffcccc;
+            font-style: italic;
+            border-left: 3px solid #e74c3c;
+        }
+
+        .restart-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        .restart-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(231, 76, 60, 0.3);
+        }
+
+        .closure-card {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .closure-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .closure-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .closure-card .competences {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .closure-card .competences p {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💊 QCM - AVK (Anti-Vitamine K)</h1>
+            <p>Accompagnement pharmaceutique et gestion de l'INR - Niveau Intermédiaire</p>
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="progressText">Question 1/16</span>
+                <span id="scoreText">Score: 0/16</span>
+            </div>
+        </div>
+
+        <div class="content" id="quizContent">
+            <!-- Questions will be inserted here -->
+        </div>
+
+        <div class="results" id="results">
+            <div class="score-circle" id="scoreCircle">0%</div>
+            <h2 class="results-title" id="resultsTitle">Félicitations !</h2>
+            <p class="results-message" id="resultsMessage"></p>
+            <div id="badge"></div>
+            <button class="restart-btn" onclick="showPractical()">➡️ Passer à la mise en pratique</button>
+        </div>
+
+        <div class="practical-section" id="practicalSection">
+            <h2 class="practical-title">🩺 Mise en pratique - Entretien patient sous AVK</h2>
+            <p class="practical-subtitle">Testez votre capacité à accompagner un patient sous anticoagulant AVK</p>
+
+            <div class="case-card">
+                <div class="case-title">📋 Cas 1 : M. D., 72 ans, sous warfarine (Coumadine®), INR instable</div>
+                <div class="case-scenario">
+                    M. D. vient chercher son ordonnance de Coumadine®. Il vous confie qu'il fait une "cure détox" de jus verts chaque mois depuis 2 mois et que son INR est devenu instable (yo-yo entre 1,5 et 3,8). Son médecin ne comprend pas pourquoi.
+                </div>
+                <p style="font-weight: 600; margin-bottom: 12px; color: white;">Quelle est votre analyse et conduite à tenir ?</p>
+                <div class="options" id="case1Options">
+                    <label class="option">
+                        <input type="radio" name="case1" value="a">
+                        <span>A. "C'est normal, l'INR varie naturellement."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case1" value="b">
+                        <span>B. "Vos jus verts sont très riches en vitamine K (épinards, choux, brocolis). Cette VARIATION d'apport déstabilise votre INR. Il faut un apport STABLE en vitamine K : soit arrêter les cures, soit les faire en continu. Je contacte votre médecin pour expliquer."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case1" value="c">
+                        <span>C. "Arrêtez complètement tous les légumes verts."</span>
+                    </label>
+                </div>
+                <div class="feedback" id="case1Feedback"></div>
+                <button class="btn btn-primary" onclick="validateCase(1)" style="margin-top: 15px;">Valider</button>
+            </div>
+
+            <div class="case-card">
+                <div class="case-title">📋 Cas 2 : Mme L., 68 ans, sous Previscan®, extraction dentaire prévue dans 5 jours</div>
+                <div class="case-scenario">
+                    Mme L. vous demande si elle doit arrêter son AVK avant son extraction dentaire. Son INR est stable dans la cible (2,5 la semaine dernière). Elle a une fibrillation auriculaire sans autre facteur de risque thrombotique élevé.
+                </div>
+                <p style="font-weight: 600; margin-bottom: 12px; color: white;">Que lui conseillez-vous ?</p>
+                <div class="options" id="case2Options">
+                    <label class="option">
+                        <input type="radio" name="case2" value="a">
+                        <span>A. "Vous devez absolument arrêter 5 jours avant avec un relais HBPM."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case2" value="b">
+                        <span>B. "Pour une extraction dentaire (acte à faible risque hémorragique) avec un INR stable dans la cible, il n'est généralement PAS nécessaire d'arrêter l'AVK. Je contacte votre dentiste et médecin pour confirmer cette conduite et vérifier votre INR avant l'acte."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case2" value="c">
+                        <span>C. "Arrêtez juste la veille, ça suffit."</span>
+                    </label>
+                </div>
+                <div class="feedback" id="case2Feedback"></div>
+                <button class="btn btn-primary" onclick="validateCase(2)" style="margin-top: 15px;">Valider</button>
+            </div>
+
+            <div class="case-card">
+                <div class="case-title">📋 Cas 3 : M. C., 75 ans, sous AVK, INR à 4,8 (cible 2-3)</div>
+                <div class="case-scenario">
+                    M. C. vous montre son dernier résultat d'INR : 4,8 (au lieu de 2-3 habituellement). Il n'a pas de saignement visible mais se sent un peu fatigué. Il a commencé un antibiotique il y a 4 jours (amoxicilline prescrite par son médecin pour une infection urinaire).
+                </div>
+                <p style="font-weight: 600; margin-bottom: 12px; color: white;">Quelle est votre conduite immédiate ?</p>
+                <div class="options" id="case3Options">
+                    <label class="option">
+                        <input type="radio" name="case3" value="a">
+                        <span>A. "Ce n'est pas grave, continuez normalement."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case3" value="b">
+                        <span>B. "INR à 4,8 = risque hémorragique. L'amoxicilline peut majorer l'effet des AVK (interaction). SUSPENDEZ votre AVK aujourd'hui, j'appelle IMMÉDIATEMENT votre médecin pour ajustement de dose et contrôle INR rapproché. Surveillez tout saignement anormal."</span>
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="case3" value="c">
+                        <span>C. "Réduisez la dose de moitié vous-même."</span>
+                    </label>
+                </div>
+                <div class="feedback" id="case3Feedback"></div>
+                <button class="btn btn-primary" onclick="validateCase(3)" style="margin-top: 15px;">Valider</button>
+            </div>
+
+            <div class="case-card closure-card" id="closureCard" style="display: none;">
+                <h3>🎓 Félicitations !</h3>
+                <p>
+                    Vous avez terminé l'évaluation complète sur les AVK (Anti-Vitamine K). 
+                    Vous êtes maintenant capable de :
+                </p>
+                <div class="competences">
+                    <p>✅ Expliquer l'INR et ses zones thérapeutiques</p>
+                    <p>✅ Gérer les variations d'INR (alimentation, interactions)</p>
+                    <p>✅ Coordonner les arrêts péri-opératoires avec relais HBPM</p>
+                    <p>✅ Détecter et gérer les situations à risque (INR haut/bas)</p>
+                    <p>✅ Accompagner le patient avec le carnet AVK et la carte anticoagulant</p>
+                </div>
+                <p style="font-size: 16px; margin-top: 25px; font-weight: 600;">
+                    🛡️ Vous contribuez activement à la stabilisation de l'INR et à la sécurité des patients !
+                </p>
+            </div>
+
+            <button class="restart-btn" onclick="location.reload()">🔄 Recommencer le QCM</button>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            {
+                id: 1,
+                type: "QCM",
+                question: "Quels sont les AVK (Anti-Vitamine K) disponibles en France ? (Plusieurs réponses possibles)",
+                options: [
+                    "Warfarine (Coumadine®)",
+                    "Acénocoumarol (Sintrom®, Minisintrom®)",
+                    "Fluindione (Previscan®)",
+                    "Apixaban (Eliquis®)"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Les AVK disponibles en France sont : warfarine (Coumadine®), acénocoumarol (Sintrom®, Minisintrom®) et fluindione (Previscan®). Apixaban (Eliquis®) est un AOD (Anticoagulant Oral Direct), pas un AVK."
+            },
+            {
+                id: 2,
+                type: "QCU",
+                question: "Qu'est-ce que l'INR ?",
+                options: [
+                    "Un indicateur du taux de vitamine K",
+                    "International Normalized Ratio - indicateur de la coagulation (fluidité du sang)",
+                    "Un type d'anticoagulant",
+                    "Une technique d'injection"
+                ],
+                correct: [1],
+                explanation: "L'INR (International Normalized Ratio) est un indicateur standardisé de la coagulation qui mesure la fluidité du sang. Il permet d'ajuster la dose d'AVK pour maintenir le patient dans une zone thérapeutique optimale (généralement 2-3)."
+            },
+            {
+                id: 3,
+                type: "QCU",
+                question: "Quelle est la zone INR thérapeutique STANDARD pour la plupart des indications (FA, MTEV) ?",
+                options: [
+                    "INR 1-2",
+                    "INR 2-3",
+                    "INR 3-4,5",
+                    "INR 4-5"
+                ],
+                correct: [1],
+                explanation: "La zone thérapeutique standard est INR 2-3 pour la majorité des indications (fibrillation auriculaire, MTEV). Certaines situations à haut risque thrombotique (valves mécaniques, SAPL) nécessitent un INR cible plus élevé (3-4,5)."
+            },
+            {
+                id: 4,
+                type: "QCM",
+                question: "Quelles sont les principales indications des AVK ? (Plusieurs réponses possibles)",
+                options: [
+                    "Fibrillation auriculaire (FA)",
+                    "Thrombose veineuse / Embolie pulmonaire (MTEV)",
+                    "Valves cardiaques mécaniques",
+                    "Hypertension artérielle simple"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Indications des AVK : FA, MTEV (thrombose veineuse profonde, embolie pulmonaire), valves cardiaques mécaniques, syndrome des antiphospholipides (SAPL). L'HTA simple ne nécessite pas d'anticoagulation."
+            },
+            {
+                id: 5,
+                type: "QCU",
+                question: "Un patient sous AVK oublie sa dose à 20h. Il s'en rend compte à 23h (3h après). Que lui conseillez-vous ?",
+                options: [
+                    "Prendre la dose oubliée immédiatement",
+                    "Doubler la dose le lendemain",
+                    "Sauter cette dose et attendre la prochaine",
+                    "Arrêter le traitement"
+                ],
+                correct: [0],
+                explanation: "Pour un oubli d'AVK : si < 8 HEURES après l'heure habituelle → prendre la dose immédiatement. Si > 8h → sauter la dose et reprendre le lendemain. Noter l'oubli dans le carnet AVK et le signaler au prochain contrôle INR. NE JAMAIS doubler une dose."
+            },
+            {
+                id: 6,
+                type: "QCU",
+                question: "Quel est le PRINCIPAL facteur alimentaire qui influence l'efficacité des AVK ?",
+                options: [
+                    "Le calcium",
+                    "La vitamine K",
+                    "Le fer",
+                    "Le magnésium"
+                ],
+                correct: [1],
+                explanation: "La VITAMINE K est l'antagoniste des AVK. C'est la VARIATION d'apport en vitamine K qui déstabilise l'INR, pas la quantité absolue. Message clé : apport STABLE et RÉGULIER (ni excès ni carence)."
+            },
+            {
+                id: 7,
+                type: "QCM",
+                question: "Quels aliments sont les PLUS riches en vitamine K ? (Plusieurs réponses possibles)",
+                options: [
+                    "Légumes verts (brocolis, choux, épinards)",
+                    "Viandes rouges",
+                    "Foie et abats",
+                    "Produits laitiers"
+                ],
+                correct: [0, 2],
+                explanation: "Aliments les plus riches en vitamine K : légumes verts (brocolis, choux, chou-fleur, épinards, laitue), foie, persil, certaines huiles végétales. Aucun aliment n'est interdit : l'important est la RÉGULARITÉ d'apport."
+            },
+            {
+                id: 8,
+                type: "QCU",
+                question: "Un patient sous AVK doit subir une extraction dentaire simple. Quelle est la conduite généralement recommandée ?",
+                options: [
+                    "Toujours arrêter l'AVK 5 jours avant + relais HBPM systématique",
+                    "Maintien de l'AVK si INR stable dans la cible (acte à faible risque hémorragique) - évaluation au cas par cas",
+                    "Arrêt AVK la veille seulement",
+                    "Arrêt définitif de l'AVK"
+                ],
+                correct: [1],
+                explanation: "Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec INR stable dans la cible : généralement MAINTIEN de l'AVK (pas d'arrêt nécessaire). Pour les actes à HAUT risque hémorragique : arrêt 5 jours avant + relais HBPM si risque thrombotique élevé. Chaque situation doit être ÉVALUÉE individuellement (risque hémorragique de l'acte vs risque thrombotique du patient). Toujours coordonner avec médecin et chirurgien."
+            },
+            {
+                id: 9,
+                type: "QCM",
+                question: "Quelles sont les interactions médicamenteuses MAJEURES avec les AVK ? (Plusieurs réponses possibles)",
+                options: [
+                    "AINS (ibuprofène, kétoprofène...)",
+                    "Antibiotiques (notamment amoxicilline, macrolides)",
+                    "Paracétamol à dose usuelle",
+                    "Antifongiques azolés"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Interactions majeures AVK : AINS (risque hémorragique ++), antibiotiques/antifongiques (augmentent effet AVK), amiodarone, millepertuis. Le paracétamol à dose usuelle (≤3g/j) est compatible. TOUJOURS vérifier les interactions avant toute co-prescription."
+            },
+            {
+                id: 10,
+                type: "QCU",
+                question: "Un patient a un INR à 5,2 (cible 2-3) sans saignement. Quelle est la conduite à tenir ?",
+                options: [
+                    "Continuer normalement",
+                    "Suspendre l'AVK, avis médical urgent, contrôle INR rapproché, surveiller saignements",
+                    "Doubler la dose",
+                    "Prendre de la vitamine K sans avis médical"
+                ],
+                correct: [1],
+                explanation: "INR > 5 = risque hémorragique élevé. Conduite : SUSPENDRE l'AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveiller signes hémorragiques. La vitamine K peut être administrée selon protocole médical (INR > 6 ou saignement). Le patient ne doit JAMAIS s'auto-ajuster."
+            },
+            {
+                id: 11,
+                type: "QCM",
+                question: "Quels sont les signes d'alerte HÉMORRAGIQUE sous AVK ? (Plusieurs réponses possibles)",
+                options: [
+                    "Saignements de nez prolongés (épistaxis)",
+                    "Hématomes spontanés ou pour traumatismes mineurs",
+                    "Urines rouges ou selles noires",
+                    "Constipation légère"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Signes hémorragiques : épistaxis prolongés, hématomes spontanés/faciles, hématurie (sang dans urines), rectorragies/méléna (selles noires), saignements gingivaux, céphalées violentes. Tout signe hémorragique = avis médical urgent. La constipation n'est pas un signe hémorragique."
+            },
+            {
+                id: 12,
+                type: "QCU",
+                question: "Un patient sous AVK doit-il porter une carte d'anticoagulant ?",
+                options: [
+                    "Non, c'est optionnel",
+                    "Oui, OBLIGATOIRE - à porter en permanence",
+                    "Seulement en voyage",
+                    "Uniquement si INR instable"
+                ],
+                correct: [1],
+                explanation: "La carte d'anticoagulant est OBLIGATOIRE pour tout patient sous AVK. Elle doit être portée EN PERMANENCE et présentée à tout professionnel de santé (médecin, dentiste, urgences). Elle contient les informations vitales en cas d'urgence."
+            },
+            {
+                id: 13,
+                type: "QCU",
+                question: "À quelle fréquence MINIMUM un patient sous AVK doit-il contrôler son INR en phase d'équilibre ?",
+                options: [
+                    "1 fois par semaine",
+                    "1 fois par mois minimum",
+                    "1 fois par trimestre",
+                    "1 fois par an"
+                ],
+                correct: [1],
+                explanation: "En phase d'équilibre (INR stable), contrôle INR MINIMUM 1 fois par mois. Au début du traitement ou après modification de dose : contrôles plus rapprochés (tous les 2-3 jours puis hebdomadaires). Toujours au même laboratoire pour comparabilité."
+            },
+            {
+                id: 14,
+                type: "QCM",
+                question: "Que doit contenir le carnet AVK du patient ? (Plusieurs réponses possibles)",
+                options: [
+                    "Dates et résultats des INR",
+                    "Doses d'AVK prises chaque jour",
+                    "Coordonnées du médecin et du laboratoire",
+                    "Recettes de cuisine"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Le carnet AVK doit contenir : dates et résultats INR, doses d'AVK quotidiennes, dates des prochains contrôles, coordonnées médecin/laboratoire, événements particuliers (oublis, saignements, nouveaux médicaments). C'est un outil de suivi et de coordination essentiel."
+            },
+            {
+                id: 15,
+                type: "QCM",
+                question: "Quels sont les messages clés à transmettre SYSTÉMATIQUEMENT au patient sous AVK lors de l'entretien ? (Plusieurs réponses possibles)",
+                options: [
+                    "Ne jamais modifier la dose seul, toujours appeler avant",
+                    "Porter la carte anticoagulant en permanence",
+                    "Régime alimentaire stable en vitamine K (éviter variations brutales)",
+                    "Arrêter tout médicament sans en parler"
+                ],
+                correct: [0, 1, 2],
+                explanation: "Messages clés AVK : 1) Ne JAMAIS modifier la dose seul (risque vital), 2) Porter carte anticoagulant EN PERMANENCE, 3) Alimentation STABLE en vitamine K (régularité > quantité), 4) Signaler TOUT nouveau médicament/complément (interactions), 5) Remplir le carnet AVK, 6) Signaler tout saignement anormal. Il ne faut pas arrêter les médicaments seul mais en parler au médecin/pharmacien."
+            },
+            {
+                id: 16,
+                type: "QCU",
+                question: "Quels sont les codes de facturation pour l'accompagnement AVK en année 1 ?",
+                options: [
+                    "Aucune facturation possible",
+                    "TAC (adhésion 0,01€) + 3 entretiens ASI (15€ + 15€ + 20€)",
+                    "Un seul entretien de 50€",
+                    "Facturation libre"
+                ],
+                correct: [1],
+                explanation: "Facturation AVK Année 1 : TAC (adhésion traceur 0,01€, AMO 100%) + 3 entretiens ASI (15€ + 15€ + 20€, AMO 70%). Années suivantes : 2 entretiens ASS (10€ + 20€). Actes isolés, tiers payant, RPPS pharmacien."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let userAnswers = [];
+
+        function init() {
+            displayQuestion();
+        }
+
+        function displayQuestion() {
+            const question = questions[currentQuestion];
+            const content = document.getElementById('quizContent');
+            
+            let optionsHTML = '';
+            const inputType = question.type === 'QCU' ? 'radio' : 'checkbox';
+            
+            question.options.forEach((option, index) => {
+                optionsHTML += `
+                    <label class="option" data-index="${index}">
+                        <input type="${inputType}" name="question${question.id}" value="${index}">
+                        <span>${option}</span>
+                    </label>
+                `;
+            });
+
+            content.innerHTML = `
+                <div class="question-card active">
+                    <span class="question-type">${question.type} - ${question.type === 'QCU' ? '1 seule réponse' : 'Plusieurs réponses possibles'}</span>
+                    <h2 class="question-title">${question.question}</h2>
+                    <div class="options" id="options">
+                        ${optionsHTML}
+                    </div>
+                    <div class="feedback" id="feedback"></div>
+                    <div class="buttons">
+                        <button class="btn btn-secondary" onclick="previousQuestion()" ${currentQuestion === 0 ? 'disabled' : ''}>← Précédent</button>
+                        <button class="btn btn-primary" id="validateBtn" onclick="validateAnswer()">Valider</button>
+                    </div>
+                </div>
+            `;
+
+            updateProgress();
+            addOptionListeners();
+        }
+
+        function addOptionListeners() {
+            const options = document.querySelectorAll('.option');
+            options.forEach(option => {
+                option.addEventListener('click', function() {
+                    const input = this.querySelector('input');
+                    if (input.type === 'radio') {
+                        document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+                        this.classList.add('selected');
+                    } else {
+                        this.classList.toggle('selected');
+                    }
+                });
+            });
+        }
+
+        function validateAnswer() {
+            const question = questions[currentQuestion];
+            const selectedOptions = Array.from(document.querySelectorAll(`input[name="question${question.id}"]:checked`))
+                .map(input => parseInt(input.value));
+
+            if (selectedOptions.length === 0) {
+                alert('Veuillez sélectionner au moins une réponse.');
+                return;
+            }
+
+            const isCorrect = JSON.stringify(selectedOptions.sort()) === JSON.stringify(question.correct.sort());
+            
+            userAnswers.push({
+                questionId: question.id,
+                selected: selectedOptions,
+                correct: question.correct,
+                isCorrect: isCorrect
+            });
+
+            if (isCorrect) {
+                score++;
+            }
+
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.add('disabled');
+                const index = parseInt(option.dataset.index);
+                if (question.correct.includes(index)) {
+                    option.classList.add('correct');
+                } else if (selectedOptions.includes(index)) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            const feedback = document.getElementById('feedback');
+            feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = `
+                <div class="feedback-title">
+                    ${isCorrect ? '✅ Bonne réponse !' : '❌ Réponse incorrecte'}
+                </div>
+                <div>💡 ${question.explanation}</div>
+            `;
+
+            const validateBtn = document.getElementById('validateBtn');
+            validateBtn.textContent = currentQuestion < questions.length - 1 ? 'Question suivante →' : 'Voir les résultats 🎯';
+            validateBtn.onclick = currentQuestion < questions.length - 1 ? nextQuestion : showResults;
+
+            updateScore();
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            displayQuestion();
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                displayQuestion();
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `Question ${currentQuestion + 1}/${questions.length}`;
+        }
+
+        function updateScore() {
+            document.getElementById('scoreText').textContent = `Score: ${score}/${questions.length}`;
+        }
+
+        function showResults() {
+            const percentage = Math.round((score / questions.length) * 100);
+            const content = document.getElementById('quizContent');
+            const results = document.getElementById('results');
+            
+            content.style.display = 'none';
+            results.classList.add('show');
+
+            document.getElementById('scoreCircle').textContent = percentage + '%';
+            
+            let title, message, badgeClass, badgeText;
+            
+            if (percentage >= 90) {
+                title = '🎉 Excellent !';
+                message = 'Vous maîtrisez parfaitement l\'accompagnement des patients sous AVK. Votre expertise en gestion de l\'INR et prévention des risques est remarquable !';
+                badgeClass = 'badge-excellent';
+                badgeText = '⭐ Expert AVK';
+            } else if (percentage >= 75) {
+                title = '👏 Très bien !';
+                message = 'Vous avez une bonne compréhension des AVK. Continuez à approfondir la gestion des interactions et des situations à risque.';
+                badgeClass = 'badge-good';
+                badgeText = '✅ Compétences solides';
+            } else if (percentage >= 60) {
+                title = '👍 Bien !';
+                message = 'Vous avez les bases sur les AVK. Il serait bénéfique de revoir l\'INR, la vitamine K et les protocoles péri-opératoires.';
+                badgeClass = 'badge-average';
+                badgeText = '📚 À approfondir';
+            } else {
+                title = '💪 À améliorer';
+                message = 'Les AVK nécessitent encore du travail. Reprenez les concepts fondamentaux : INR, vitamine K, interactions et gestion des oublis.';
+                badgeClass = 'badge-needs-improvement';
+                badgeText = '📖 Révision nécessaire';
+            }
+
+            document.getElementById('resultsTitle').textContent = title;
+            document.getElementById('resultsMessage').textContent = message + ` Vous avez répondu correctement à ${score} questions sur ${questions.length}.`;
+            document.getElementById('badge').innerHTML = `<span class="badge ${badgeClass}">${badgeText}</span>`;
+        }
+
+        function showPractical() {
+            document.getElementById('results').classList.remove('show');
+            document.getElementById('practicalSection').classList.add('show');
+        }
+
+        function validateCase(caseNumber) {
+            const selectedOption = document.querySelector(`input[name="case${caseNumber}"]:checked`);
+            
+            if (!selectedOption) {
+                alert('Veuillez sélectionner une réponse.');
+                return;
+            }
+
+            const correctAnswers = {
+                1: 'b',
+                2: 'b',
+                3: 'b'
+            };
+
+            const feedbacks = {
+                1: {
+                    correct: '✅ Excellente analyse pharmaceutique ! Vous identifiez la cause de l\'instabilité INR : VARIATION d\'apport en vitamine K (cures ponctuelles de jus verts). Vous expliquez clairement au patient que c\'est la RÉGULARITÉ qui compte, pas l\'interdiction. Vous proposez 2 solutions (arrêt ou apport continu) et vous coordonnez avec le médecin. C\'est une expertise AVK exemplaire.',
+                    incorrect: '❌ Vous manquez l\'origine du problème. Les VARIATIONS d\'apport en vitamine K (cures ponctuelles de jus verts riches en légumes verts) déstabilisent l\'INR. Ce n\'est PAS l\'INR qui varie naturellement de façon aussi importante. Aucun aliment n\'est interdit : c\'est la RÉGULARITÉ d\'apport qui compte. Solution : soit arrêter les cures, soit les faire en CONTINU pour stabiliser l\'apport. Le pharmacien doit identifier cette cause et coordonner avec le médecin.'
+                },
+                2: {
+                    correct: '✅ Parfait ! Vous connaissez les recommandations actuelles : pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec un INR STABLE dans la cible, il n\'est généralement PAS nécessaire d\'arrêter l\'AVK. Vous coordonnez avec le dentiste et le médecin pour confirmer cette conduite et vérifier l\'INR avant l\'acte. Chaque situation doit être évaluée individuellement (risque hémorragique de l\'acte vs risque thrombotique du patient). C\'est une démarche professionnelle et sécurisante basée sur les dernières recommandations.',
+                    incorrect: '❌ Votre conduite n\'est pas conforme aux recommandations actuelles. Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec un INR STABLE dans la cible, il n\'est généralement PAS nécessaire d\'arrêter l\'AVK. Un arrêt systématique de 5 jours + relais HBPM n\'est indiqué que pour les actes à HAUT risque hémorragique OU risque thrombotique très élevé (valves mécaniques, SAPL, antécédent récent de thrombose). Un arrêt la veille est insuffisant et expose à un risque. Chaque situation doit être ÉVALUÉE individuellement. Le pharmacien doit COORDONNER avec dentiste et médecin pour décision collégiale.'
+                },
+                3: {
+                    correct: '✅ Excellente gestion d\'urgence ! Vous identifiez : 1) INR > 4,5 = risque hémorragique élevé, 2) Interaction AVK + amoxicilline (majore l\'effet), 3) Fatigue = possible signe d\'anémie/saignement occulte. Vous SUSPENDEZ l\'AVK, appelez IMMÉDIATEMENT le médecin, et donnez les consignes de surveillance. C\'est une intervention pharmaceutique vitale qui prévient un accident hémorragique grave.',
+                    incorrect: '❌ DANGER ! INR 4,8 (au lieu de 2-3) = risque hémorragique MAJEUR. L\'amoxicilline MAJORE l\'effet des AVK (interaction fréquente). La fatigue peut être un signe d\'anémie par saignement occulte. Conduite obligatoire : SUSPENDRE AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveillance saignements. Le patient ne doit JAMAIS s\'auto-ajuster. Le pharmacien doit BLOQUER et COORDONNER en urgence.'
+                }
+            };
+
+            const isCorrect = selectedOption.value === correctAnswers[caseNumber];
+            const feedback = document.getElementById(`case${caseNumber}Feedback`);
+            
+            feedback.className = `feedback show ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.innerHTML = isCorrect ? feedbacks[caseNumber].correct : feedbacks[caseNumber].incorrect;
+
+            document.getElementById(`case${caseNumber}Options`).querySelectorAll('.option').forEach(option => {
+                option.classList.add('disabled');
+                if (option.querySelector('input').value === correctAnswers[caseNumber]) {
+                    option.classList.add('correct');
+                } else if (option.querySelector('input').checked) {
+                    option.classList.add('incorrect');
+                }
+            });
+
+            // Afficher le message de félicitations après validation du dernier cas (cas 3)
+            if (caseNumber === 3) {
+                setTimeout(() => {
+                    document.getElementById('closureCard').style.display = 'block';
+                    document.getElementById('closureCard').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 1000);
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

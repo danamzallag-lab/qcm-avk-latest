@@ -1,0 +1,23 @@
+{
+  "name": "qcm-avk-latest",
+  "version": "1.0.0",
+  "description": "QCM Professionnel - AVK (Anti-Vitamine K) - Application de formation pour pharmaciens",
+  "main": "qcm-avk.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve ."
+  },
+  "keywords": [
+    "qcm",
+    "avk",
+    "pharmacie",
+    "formation",
+    "anticoagulant"
+  ],
+  "author": "Dan Amzallag",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danamzallag-lab/qcm-avk-latest.git"
+  }
+}
