@@ -474,15 +474,15 @@
                 <div class="options" id="case1Options">
                     <label class="option">
                         <input type="radio" name="case1" value="a">
-                        <span>A. "C'est normal, l'INR varie naturellement."</span>
+                        <span>A. "Vos jus verts sont très riches en vitamine K (épinards, choux, brocolis). Cette VARIATION d'apport déstabilise votre INR. Il faut un apport STABLE en vitamine K : soit arrêter les cures, soit les faire en continu. Je contacte votre médecin pour expliquer."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case1" value="b">
-                        <span>B. "Vos jus verts sont très riches en vitamine K (épinards, choux, brocolis). Cette VARIATION d'apport déstabilise votre INR. Il faut un apport STABLE en vitamine K : soit arrêter les cures, soit les faire en continu. Je contacte votre médecin pour expliquer."</span>
+                        <span>B. "C'est normal, l'INR varie naturellement avec l'âge et les saisons."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case1" value="c">
-                        <span>C. "Arrêtez complètement tous les légumes verts."</span>
+                        <span>C. "Vous devez supprimer ces jus verts et limiter fortement votre consommation de légumes verts à 1 portion par semaine maximum."</span>
                     </label>
                 </div>
                 <div class="feedback" id="case1Feedback"></div>
@@ -498,15 +498,15 @@
                 <div class="options" id="case2Options">
                     <label class="option">
                         <input type="radio" name="case2" value="a">
-                        <span>A. "Vous devez absolument arrêter 5 jours avant avec un relais HBPM."</span>
+                        <span>A. "Pour toute intervention dentaire, un arrêt de l'AVK 5 jours avant avec relais par HBPM est indispensable, même si votre INR est stable."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case2" value="b">
-                        <span>B. "Pour une extraction dentaire (acte à faible risque hémorragique) avec un INR stable dans la cible, il n'est généralement PAS nécessaire d'arrêter l'AVK. Je contacte votre dentiste et médecin pour confirmer cette conduite et vérifier votre INR avant l'acte."</span>
+                        <span>B. "Arrêtez juste la veille de l'intervention, c'est suffisant pour une extraction simple."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case2" value="c">
-                        <span>C. "Arrêtez juste la veille, ça suffit."</span>
+                        <span>C. "Pour une extraction dentaire (acte à faible risque hémorragique) avec un INR stable dans la cible, il n'est généralement PAS nécessaire d'arrêter l'AVK. Je contacte votre dentiste et médecin pour confirmer cette conduite et vérifier votre INR avant l'acte."</span>
                     </label>
                 </div>
                 <div class="feedback" id="case2Feedback"></div>
@@ -522,15 +522,15 @@
                 <div class="options" id="case3Options">
                     <label class="option">
                         <input type="radio" name="case3" value="a">
-                        <span>A. "Ce n'est pas grave, continuez normalement."</span>
+                        <span>A. "INR à 4,8 = risque hémorragique. L'amoxicilline peut majorer l'effet des AVK (interaction). SUSPENDEZ votre AVK aujourd'hui, j'appelle IMMÉDIATEMENT votre médecin pour ajustement de dose et contrôle INR rapproché. Surveillez tout saignement anormal."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case3" value="b">
-                        <span>B. "INR à 4,8 = risque hémorragique. L'amoxicilline peut majorer l'effet des AVK (interaction). SUSPENDEZ votre AVK aujourd'hui, j'appelle IMMÉDIATEMENT votre médecin pour ajustement de dose et contrôle INR rapproché. Surveillez tout saignement anormal."</span>
+                        <span>B. "Ce n'est pas grave, l'amoxicilline n'interagit pas avec les AVK. Continuez normalement et refaites un INR au prochain contrôle prévu."</span>
                     </label>
                     <label class="option">
                         <input type="radio" name="case3" value="c">
-                        <span>C. "Réduisez la dose de moitié vous-même."</span>
+                        <span>C. "Réduisez votre dose d'AVK de moitié ce soir et refaites un contrôle INR dans une semaine."</span>
                     </label>
                 </div>
                 <div class="feedback" id="case3Feedback"></div>
@@ -567,11 +567,11 @@
                 question: "Quels sont les AVK (Anti-Vitamine K) disponibles en France ? (Plusieurs réponses possibles)",
                 options: [
                     "Warfarine (Coumadine®)",
-                    "Acénocoumarol (Sintrom®, Minisintrom®)",
+                    "Apixaban (Eliquis®)",
                     "Fluindione (Previscan®)",
-                    "Apixaban (Eliquis®)"
+                    "Acénocoumarol (Sintrom®, Minisintrom®)"
                 ],
-                correct: [0, 1, 2],
+                correct: [0, 2, 3],
                 explanation: "Les AVK disponibles en France sont : warfarine (Coumadine®), acénocoumarol (Sintrom®, Minisintrom®) et fluindione (Previscan®). Apixaban (Eliquis®) est un AOD (Anticoagulant Oral Direct), pas un AVK."
             },
             {
@@ -580,11 +580,11 @@
                 question: "Qu'est-ce que l'INR ?",
                 options: [
                     "Un indicateur du taux de vitamine K",
-                    "International Normalized Ratio - indicateur de la coagulation (fluidité du sang)",
                     "Un type d'anticoagulant",
-                    "Une technique d'injection"
+                    "International Normalized Ratio - indicateur de la coagulation (fluidité du sang)",
+                    "Un marqueur du risque thrombotique veineux"
                 ],
-                correct: [1],
+                correct: [2],
                 explanation: "L'INR (International Normalized Ratio) est un indicateur standardisé de la coagulation qui mesure la fluidité du sang. Il permet d'ajuster la dose d'AVK pour maintenir le patient dans une zone thérapeutique optimale (généralement 2-3)."
             },
             {
@@ -606,11 +606,11 @@
                 question: "Quelles sont les principales indications des AVK ? (Plusieurs réponses possibles)",
                 options: [
                     "Fibrillation auriculaire (FA)",
-                    "Thrombose veineuse / Embolie pulmonaire (MTEV)",
+                    "Hypertension artérielle simple",
                     "Valves cardiaques mécaniques",
-                    "Hypertension artérielle simple"
+                    "Thrombose veineuse / Embolie pulmonaire (MTEV)"
                 ],
-                correct: [0, 1, 2],
+                correct: [0, 2, 3],
                 explanation: "Indications des AVK : FA, MTEV (thrombose veineuse profonde, embolie pulmonaire), valves cardiaques mécaniques, syndrome des antiphospholipides (SAPL). L'HTA simple ne nécessite pas d'anticoagulation."
             },
             {
@@ -621,7 +621,7 @@
                     "Prendre la dose oubliée immédiatement",
                     "Doubler la dose le lendemain",
                     "Sauter cette dose et attendre la prochaine",
-                    "Arrêter le traitement"
+                    "Prendre une demi-dose maintenant et l'autre demi-dose demain matin"
                 ],
                 correct: [0],
                 explanation: "Pour un oubli d'AVK : si < 8 HEURES après l'heure habituelle → prendre la dose immédiatement. Si > 8h → sauter la dose et reprendre le lendemain. Noter l'oubli dans le carnet AVK et le signaler au prochain contrôle INR. NE JAMAIS doubler une dose."
@@ -631,12 +631,12 @@
                 type: "QCU",
                 question: "Quel est le PRINCIPAL facteur alimentaire qui influence l'efficacité des AVK ?",
                 options: [
-                    "Le calcium",
                     "La vitamine K",
+                    "Le calcium",
                     "Le fer",
-                    "Le magnésium"
+                    "Les oméga-3 (huiles de poisson)"
                 ],
-                correct: [1],
+                correct: [0],
                 explanation: "La VITAMINE K est l'antagoniste des AVK. C'est la VARIATION d'apport en vitamine K qui déstabilise l'INR, pas la quantité absolue. Message clé : apport STABLE et RÉGULIER (ni excès ni carence)."
             },
             {
@@ -658,11 +658,11 @@
                 question: "Un patient sous AVK doit subir une extraction dentaire simple. Quelle est la conduite généralement recommandée ?",
                 options: [
                     "Toujours arrêter l'AVK 5 jours avant + relais HBPM systématique",
-                    "Maintien de l'AVK si INR stable dans la cible (acte à faible risque hémorragique) - évaluation au cas par cas",
+                    "Arrêt définitif de l'AVK",
                     "Arrêt AVK la veille seulement",
-                    "Arrêt définitif de l'AVK"
+                    "Maintien de l'AVK si INR stable dans la cible (acte à faible risque hémorragique) - évaluation au cas par cas"
                 ],
-                correct: [1],
+                correct: [3],
                 explanation: "Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec INR stable dans la cible : généralement MAINTIEN de l'AVK (pas d'arrêt nécessaire). Pour les actes à HAUT risque hémorragique : arrêt 5 jours avant + relais HBPM si risque thrombotique élevé. Chaque situation doit être ÉVALUÉE individuellement (risque hémorragique de l'acte vs risque thrombotique du patient). Toujours coordonner avec médecin et chirurgien."
             },
             {
@@ -683,12 +683,12 @@
                 type: "QCU",
                 question: "Un patient a un INR à 5,2 (cible 2-3) sans saignement. Quelle est la conduite à tenir ?",
                 options: [
-                    "Continuer normalement",
                     "Suspendre l'AVK, avis médical urgent, contrôle INR rapproché, surveiller saignements",
+                    "Continuer normalement",
                     "Doubler la dose",
                     "Prendre de la vitamine K sans avis médical"
                 ],
-                correct: [1],
+                correct: [0],
                 explanation: "INR > 5 = risque hémorragique élevé. Conduite : SUSPENDRE l'AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveiller signes hémorragiques. La vitamine K peut être administrée selon protocole médical (INR > 6 ou saignement). Le patient ne doit JAMAIS s'auto-ajuster."
             },
             {
@@ -696,12 +696,12 @@
                 type: "QCM",
                 question: "Quels sont les signes d'alerte HÉMORRAGIQUE sous AVK ? (Plusieurs réponses possibles)",
                 options: [
-                    "Saignements de nez prolongés (épistaxis)",
+                    "Constipation légère",
                     "Hématomes spontanés ou pour traumatismes mineurs",
                     "Urines rouges ou selles noires",
-                    "Constipation légère"
+                    "Saignements de nez prolongés (épistaxis)"
                 ],
-                correct: [0, 1, 2],
+                correct: [1, 2, 3],
                 explanation: "Signes hémorragiques : épistaxis prolongés, hématomes spontanés/faciles, hématurie (sang dans urines), rectorragies/méléna (selles noires), saignements gingivaux, céphalées violentes. Tout signe hémorragique = avis médical urgent. La constipation n'est pas un signe hémorragique."
             },
             {
@@ -710,11 +710,11 @@
                 question: "Un patient sous AVK doit-il porter une carte d'anticoagulant ?",
                 options: [
                     "Non, c'est optionnel",
+                    "Oui, recommandée mais non obligatoire — à la discrétion du patient",
                     "Oui, OBLIGATOIRE - à porter en permanence",
-                    "Seulement en voyage",
                     "Uniquement si INR instable"
                 ],
-                correct: [1],
+                correct: [2],
                 explanation: "La carte d'anticoagulant est OBLIGATOIRE pour tout patient sous AVK. Elle doit être portée EN PERMANENCE et présentée à tout professionnel de santé (médecin, dentiste, urgences). Elle contient les informations vitales en cas d'urgence."
             },
             {
@@ -723,11 +723,11 @@
                 question: "À quelle fréquence MINIMUM un patient sous AVK doit-il contrôler son INR en phase d'équilibre ?",
                 options: [
                     "1 fois par semaine",
-                    "1 fois par mois minimum",
+                    "1 fois par an",
                     "1 fois par trimestre",
-                    "1 fois par an"
+                    "1 fois par mois minimum"
                 ],
-                correct: [1],
+                correct: [3],
                 explanation: "En phase d'équilibre (INR stable), contrôle INR MINIMUM 1 fois par mois. Au début du traitement ou après modification de dose : contrôles plus rapprochés (tous les 2-3 jours puis hebdomadaires). Toujours au même laboratoire pour comparabilité."
             },
             {
@@ -737,24 +737,24 @@
                 options: [
                     "Dates et résultats des INR",
                     "Doses d'AVK prises chaque jour",
-                    "Coordonnées du médecin et du laboratoire",
-                    "Recettes de cuisine"
+                    "Liste des aliments riches en vitamine K à éviter absolument",
+                    "Coordonnées du médecin et du laboratoire"
                 ],
-                correct: [0, 1, 2],
-                explanation: "Le carnet AVK doit contenir : dates et résultats INR, doses d'AVK quotidiennes, dates des prochains contrôles, coordonnées médecin/laboratoire, événements particuliers (oublis, saignements, nouveaux médicaments). C'est un outil de suivi et de coordination essentiel."
+                correct: [0, 1, 3],
+                explanation: "Le carnet AVK doit contenir : dates et résultats INR, doses d'AVK quotidiennes, dates des prochains contrôles, coordonnées médecin/laboratoire, événements particuliers (oublis, saignements, nouveaux médicaments). Une liste d'aliments à éviter n'a PAS sa place dans le carnet : aucun aliment n'est interdit, c'est la régularité d'apport en vitamine K qui compte."
             },
             {
                 id: 15,
                 type: "QCM",
                 question: "Quels sont les messages clés à transmettre SYSTÉMATIQUEMENT au patient sous AVK lors de l'entretien ? (Plusieurs réponses possibles)",
                 options: [
-                    "Ne jamais modifier la dose seul, toujours appeler avant",
+                    "Éviter systématiquement tous les légumes verts pour stabiliser l'INR",
                     "Porter la carte anticoagulant en permanence",
                     "Régime alimentaire stable en vitamine K (éviter variations brutales)",
-                    "Arrêter tout médicament sans en parler"
+                    "Ne jamais modifier la dose seul, toujours appeler avant"
                 ],
-                correct: [0, 1, 2],
-                explanation: "Messages clés AVK : 1) Ne JAMAIS modifier la dose seul (risque vital), 2) Porter carte anticoagulant EN PERMANENCE, 3) Alimentation STABLE en vitamine K (régularité > quantité), 4) Signaler TOUT nouveau médicament/complément (interactions), 5) Remplir le carnet AVK, 6) Signaler tout saignement anormal. Il ne faut pas arrêter les médicaments seul mais en parler au médecin/pharmacien."
+                correct: [1, 2, 3],
+                explanation: "Messages clés AVK : 1) Ne JAMAIS modifier la dose seul (risque vital), 2) Porter carte anticoagulant EN PERMANENCE, 3) Alimentation STABLE en vitamine K (régularité > quantité). ATTENTION : il ne faut PAS éviter les légumes verts, mais maintenir un apport RÉGULIER. L'évitement systématique est une idée reçue dangereuse. 4) Signaler TOUT nouveau médicament/complément (interactions), 5) Remplir le carnet AVK, 6) Signaler tout saignement anormal."
             },
             {
                 id: 16,
@@ -762,11 +762,11 @@
                 question: "Quels sont les codes de facturation pour l'accompagnement AVK en année 1 ?",
                 options: [
                     "Aucune facturation possible",
-                    "TAC (adhésion 0,01€) + 3 entretiens ASI (15€ + 15€ + 20€)",
                     "Un seul entretien de 50€",
+                    "TAC (adhésion 0,01€) + 3 entretiens ASI (15€ + 15€ + 20€)",
                     "Facturation libre"
                 ],
-                correct: [1],
+                correct: [2],
                 explanation: "Facturation AVK Année 1 : TAC (adhésion traceur 0,01€, AMO 100%) + 3 entretiens ASI (15€ + 15€ + 20€, AMO 70%). Années suivantes : 2 entretiens ASS (10€ + 20€). Actes isolés, tiers payant, RPPS pharmacien."
             }
         ];
@@ -953,23 +953,23 @@
             }
 
             const correctAnswers = {
-                1: 'b',
-                2: 'b',
-                3: 'b'
+                1: 'a',
+                2: 'c',
+                3: 'a'
             };
 
             const feedbacks = {
                 1: {
                     correct: '✅ Excellente analyse pharmaceutique ! Vous identifiez la cause de l\'instabilité INR : VARIATION d\'apport en vitamine K (cures ponctuelles de jus verts). Vous expliquez clairement au patient que c\'est la RÉGULARITÉ qui compte, pas l\'interdiction. Vous proposez 2 solutions (arrêt ou apport continu) et vous coordonnez avec le médecin. C\'est une expertise AVK exemplaire.',
-                    incorrect: '❌ Vous manquez l\'origine du problème. Les VARIATIONS d\'apport en vitamine K (cures ponctuelles de jus verts riches en légumes verts) déstabilisent l\'INR. Ce n\'est PAS l\'INR qui varie naturellement de façon aussi importante. Aucun aliment n\'est interdit : c\'est la RÉGULARITÉ d\'apport qui compte. Solution : soit arrêter les cures, soit les faire en CONTINU pour stabiliser l\'apport. Le pharmacien doit identifier cette cause et coordonner avec le médecin.'
+                    incorrect: '❌ Vous manquez l\'origine du problème. Les VARIATIONS d\'apport en vitamine K (cures ponctuelles de jus verts riches en légumes verts) déstabilisent l\'INR. Ce n\'est PAS l\'INR qui varie naturellement. Et LIMITER les légumes verts n\'est pas la solution : aucun aliment n\'est interdit, c\'est la RÉGULARITÉ d\'apport qui compte. Solution : soit arrêter les cures, soit les faire en CONTINU pour stabiliser l\'apport. Le pharmacien doit identifier cette cause et coordonner avec le médecin.'
                 },
                 2: {
                     correct: '✅ Parfait ! Vous connaissez les recommandations actuelles : pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec un INR STABLE dans la cible, il n\'est généralement PAS nécessaire d\'arrêter l\'AVK. Vous coordonnez avec le dentiste et le médecin pour confirmer cette conduite et vérifier l\'INR avant l\'acte. Chaque situation doit être évaluée individuellement (risque hémorragique de l\'acte vs risque thrombotique du patient). C\'est une démarche professionnelle et sécurisante basée sur les dernières recommandations.',
-                    incorrect: '❌ Votre conduite n\'est pas conforme aux recommandations actuelles. Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec un INR STABLE dans la cible, il n\'est généralement PAS nécessaire d\'arrêter l\'AVK. Un arrêt systématique de 5 jours + relais HBPM n\'est indiqué que pour les actes à HAUT risque hémorragique OU risque thrombotique très élevé (valves mécaniques, SAPL, antécédent récent de thrombose). Un arrêt la veille est insuffisant et expose à un risque. Chaque situation doit être ÉVALUÉE individuellement. Le pharmacien doit COORDONNER avec dentiste et médecin pour décision collégiale.'
+                    incorrect: '❌ Votre conduite n\'est pas conforme aux recommandations actuelles. Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec un INR STABLE dans la cible, il n\'est généralement PAS nécessaire d\'arrêter l\'AVK. Un arrêt systématique de 5 jours + relais HBPM n\'est indiqué que pour les actes à HAUT risque hémorragique OU risque thrombotique très élevé. Un arrêt la veille est insuffisant et dangereux. Chaque situation doit être ÉVALUÉE individuellement. Le pharmacien doit COORDONNER avec dentiste et médecin pour décision collégiale.'
                 },
                 3: {
                     correct: '✅ Excellente gestion d\'urgence ! Vous identifiez : 1) INR > 4,5 = risque hémorragique élevé, 2) Interaction AVK + amoxicilline (majore l\'effet), 3) Fatigue = possible signe d\'anémie/saignement occulte. Vous SUSPENDEZ l\'AVK, appelez IMMÉDIATEMENT le médecin, et donnez les consignes de surveillance. C\'est une intervention pharmaceutique vitale qui prévient un accident hémorragique grave.',
-                    incorrect: '❌ DANGER ! INR 4,8 (au lieu de 2-3) = risque hémorragique MAJEUR. L\'amoxicilline MAJORE l\'effet des AVK (interaction fréquente). La fatigue peut être un signe d\'anémie par saignement occulte. Conduite obligatoire : SUSPENDRE AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveillance saignements. Le patient ne doit JAMAIS s\'auto-ajuster. Le pharmacien doit BLOQUER et COORDONNER en urgence.'
+                    incorrect: '❌ DANGER ! INR 4,8 (au lieu de 2-3) = risque hémorragique MAJEUR. L\'amoxicilline MAJORE l\'effet des AVK (interaction documentée). La fatigue peut être un signe d\'anémie par saignement occulte. Conduite obligatoire : SUSPENDRE AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveillance saignements. Réduire la dose de moitié soi-même est INSUFFISANT et DANGEREUX avec un INR aussi élevé. Le patient ne doit JAMAIS s\'auto-ajuster. Le pharmacien doit BLOQUER et COORDONNER en urgence.'
                 }
             };
 
