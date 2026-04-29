@@ -579,12 +579,12 @@
                 type: "QCU",
                 question: "Qu'est-ce que l'INR ?",
                 options: [
-                    "Un indicateur du taux de vitamine K",
-                    "Un type d'anticoagulant",
-                    "International Normalized Ratio - indicateur de la coagulation (fluidité du sang)",
-                    "Un marqueur du risque thrombotique veineux"
+                    "International Normalized Ratio — indicateur standardisé de la coagulation (fluidité du sang)",
+                    "Indice de Néphrotoxicité Rénale — marqueur de la fonction rénale lié au métabolisme des AVK",
+                    "Indice du taux de vitamine K circulante, mesuré au laboratoire chaque mois",
+                    "Marqueur biologique du risque thrombotique veineux dans la fibrillation auriculaire"
                 ],
-                correct: [2],
+                correct: [0],
                 explanation: "L'INR (International Normalized Ratio) est un indicateur standardisé de la coagulation qui mesure la fluidité du sang. Il permet d'ajuster la dose d'AVK pour maintenir le patient dans une zone thérapeutique optimale (généralement 2-3)."
             },
             {
@@ -657,12 +657,12 @@
                 type: "QCU",
                 question: "Un patient sous AVK doit subir une extraction dentaire simple. Quelle est la conduite généralement recommandée ?",
                 options: [
-                    "Toujours arrêter l'AVK 5 jours avant + relais HBPM systématique",
-                    "Arrêt définitif de l'AVK",
-                    "Arrêt AVK la veille seulement",
-                    "Maintien de l'AVK si INR stable dans la cible (acte à faible risque hémorragique) - évaluation au cas par cas"
+                    "Arrêter l'AVK 5 jours avant l'extraction et instaurer un relais HBPM systématique pour tout patient sous AVK",
+                    "Maintenir l'AVK si l'INR est stable dans la cible : extraction dentaire simple = acte à faible risque hémorragique, hémostase locale",
+                    "Arrêter définitivement l'AVK car le saignement post-extraction expose à un risque hémorragique majeur prolongé",
+                    "Arrêter l'AVK uniquement la veille de l'intervention, ce délai suffit pour normaliser l'INR avant l'acte"
                 ],
-                correct: [3],
+                correct: [1],
                 explanation: "Pour un acte à FAIBLE risque hémorragique (extraction dentaire simple) avec INR stable et < 4 : MAINTIEN de l'AVK recommandé (Recommandation 14, Grade A — SFCO/SFMBCB 2015 « Gestion péri-opératoire des patients traités par antithrombotiques en chirurgie orale »). Hémostase locale systématique (compression, suture, acide tranexamique). Si INR ≥ 4 ou instable : différer l'intervention. Pour les actes à HAUT risque hémorragique : arrêt AVK 4-5 jours avant + relais HBPM uniquement si risque thrombotique élevé (HAS 2008, BRIDGE Trial NEJM 2015). Toujours coordonner avec médecin et chirurgien. Source : SFCO 2015 — https://societechirorale.com/wp-content/uploads/2023/06/recommandations_festion_peri_operatoire_2015_court.pdf"
             },
             {
@@ -670,9 +670,9 @@
                 type: "QCM",
                 question: "Quelles sont les interactions médicamenteuses à RISQUE avec les AVK selon le Thésaurus ANSM 2023 ? (Plusieurs réponses possibles)",
                 options: [
-                    "AINS classiques (ibuprofène, kétoprofène, diclofénac...) = Association déconseillée ; aspirine ≥ 1 g/prise = Contre-indication",
-                    "Miconazole (Daktarin® gel buccal y compris) = CONTRE-INDICATION absolue (seul azolé en CI)",
-                    "Paracétamol (antalgique de référence, sans interaction majeure aux doses usuelles)",
+                    "AINS classiques (ibuprofène, kétoprofène, diclofénac…) = Association déconseillée ; aspirine ≥ 1 g/prise = Contre-indication",
+                    "Miconazole (Daktarin® gel buccal y compris) = Contre-indication absolue, seul azolé en CI dans le Thésaurus AVK",
+                    "Paracétamol = antalgique de 1ère intention sans aucune interaction documentée, quelle que soit la dose ou la durée du traitement",
                     "Cotrimoxazole (Bactrim®) = Association déconseillée ; macrolides, fluoroquinolones, amiodarone, fluconazole, voriconazole = Précaution d'emploi"
                 ],
                 correct: [0, 1, 3],
@@ -683,12 +683,12 @@
                 type: "QCU",
                 question: "Un patient a un INR à 5,2 (cible 2-3) sans saignement. Quelle est la conduite à tenir ?",
                 options: [
-                    "Suspendre l'AVK, avis médical urgent, contrôle INR rapproché, surveiller saignements",
-                    "Continuer normalement",
-                    "Doubler la dose",
-                    "Prendre de la vitamine K sans avis médical"
+                    "Continuer la dose habituelle d'AVK et refaire un contrôle INR au prochain rendez-vous mensuel prévu",
+                    "Doubler la dose ce soir pour compenser la dérive et stabiliser rapidement l'INR dans la zone cible",
+                    "Suspendre l'AVK, avis médical urgent, contrôle INR rapproché, surveiller tout signe de saignement",
+                    "Prendre 5 mg de vitamine K orale en automédication pour faire baisser l'INR sans appeler le médecin"
                 ],
-                correct: [0],
+                correct: [2],
                 explanation: "INR > 5 = risque hémorragique élevé. Conduite : SUSPENDRE l'AVK immédiatement, avis médical URGENT, contrôle INR rapproché, surveiller signes hémorragiques. La vitamine K peut être administrée selon protocole médical (INR > 6 ou saignement). Le patient ne doit JAMAIS s'auto-ajuster."
             },
             {
@@ -709,12 +709,12 @@
                 type: "QCU",
                 question: "Un patient sous AVK doit-il porter une carte d'anticoagulant ?",
                 options: [
-                    "Non, c'est optionnel et accessoire",
-                    "Oui, FORTEMENT RECOMMANDÉE par l'ANSM — à porter en permanence pour signaler le traitement à tout professionnel de santé en cas d'urgence",
-                    "Uniquement si INR instable",
-                    "Uniquement pour les patients ayant déjà eu un accident hémorragique"
+                    "Non, le carnet AVK suffit ; la carte fait double emploi et n'apporte rien aux professionnels de santé en urgence",
+                    "Uniquement si l'INR est instable depuis plusieurs mois ou en cas d'antécédent hémorragique documenté au dossier",
+                    "Oui, fortement recommandée par l'ANSM, à porter en permanence pour signaler le traitement à tout professionnel de santé",
+                    "Uniquement pour les patients porteurs d'une valve mécanique ou avec une cible INR supérieure à 3,0"
                 ],
-                correct: [1],
+                correct: [2],
                 explanation: "La carte d'anticoagulant est FORTEMENT RECOMMANDÉE par l'ANSM pour tout patient sous AVK (Carnet de suivi AVK ANSM/HAS 2018). Elle n'est pas légalement obligatoire en France, mais elle relève des bonnes pratiques professionnelles et doit être portée en permanence. Elle contient les informations vitales (molécule, indication, contacts médecin/laboratoire) à présenter à tout professionnel de santé (médecin, dentiste, urgences, anesthésiste) en cas d'urgence ou avant tout acte invasif. Source : carnet ANSM/HAS 2018 — https://www.omedit-normandie.fr/media-files/24150/carnet-suivi-avk-2018.pdf"
             },
             {
@@ -761,12 +761,12 @@
                 type: "QCU",
                 question: "Quels sont les codes de facturation pour l'accompagnement AVK en année 1 ?",
                 options: [
-                    "Aucune facturation possible",
-                    "Un seul entretien de 50€",
-                    "TAC (adhésion 0,01€) + 3 entretiens ASI (15€ + 15€ + 20€)",
-                    "Facturation libre"
+                    "TAC (adhésion traceur à 0,01€) suivi de 3 entretiens ASI (15€ + 15€ + 20€), AMO 70 % sur les ASI",
+                    "Un entretien unique annuel forfaitaire à 50€ remboursé à 100 % par l'AMO, sans adhésion préalable",
+                    "Deux entretiens ASS de 10€ et 20€ dès la première année, sans code TAC ni acte d'adhésion préalable",
+                    "Facturation libre au choix du pharmacien selon le temps passé, plafonnée à 60€ par patient et par an"
                 ],
-                correct: [2],
+                correct: [0],
                 explanation: "Facturation AVK Année 1 : TAC (adhésion traceur 0,01€, AMO 100%) + 3 entretiens ASI (15€ + 15€ + 20€, AMO 70%). Années suivantes : 2 entretiens ASS (10€ + 20€). Actes isolés, tiers payant, RPPS pharmacien. Source : Avenant n°1 à la Convention nationale pharmaceutique du 10 juin 2024, JO 7 juillet 2024 — https://www.ameli.fr/pharmacien/exercice-professionnel/services-patients/accompagnement-patients-traitement-chronique. Vérifier les chiffres exacts sur Ameli avant publication, ils peuvent évoluer."
             },
             {
@@ -774,10 +774,10 @@
                 type: "QCU",
                 question: "Sur quoi agissent les AVK au niveau moléculaire ?",
                 options: [
-                    "Ils inhibent directement la thrombine (facteur IIa) circulante",
-                    "Ils bloquent le facteur Xa de manière directe",
-                    "Ils inhibent l'enzyme VKORC1 (Vitamin K Epoxide Reductase Complex 1) qui régénère la vitamine K active",
-                    "Ils détruisent les plaquettes circulantes"
+                    "Ils inhibent directement la thrombine (facteur IIa) circulante, comme le dabigatran (Pradaxa®)",
+                    "Ils bloquent le facteur Xa activé de manière directe et réversible, comme l'apixaban et le rivaroxaban",
+                    "Ils inhibent l'enzyme VKORC1 hépatique qui régénère la vitamine K active à partir de sa forme oxydée",
+                    "Ils détruisent les plaquettes circulantes en perturbant leur agrégation au site de la lésion vasculaire"
                 ],
                 correct: [2],
                 explanation: "Les AVK inhibent VKORC1, l'enzyme hépatique qui régénère la vitamine K active à partir de sa forme oxydée. Sans vit K active, la γ-carboxylation hépatique des facteurs II, VII, IX, X et des protéines C et S est bloquée → ces facteurs sont produits mais inactifs → anticoagulation. Source : RCP Coumadine ANSM (section 5.1 Pharmacodynamie), Vidal monographie warfarine."
@@ -800,10 +800,10 @@
                 type: "QCM",
                 question: "Concernant les demi-vies des AVK français, quelles affirmations sont VRAIES ? (Plusieurs réponses possibles)",
                 options: [
-                    "Warfarine (Coumadine®) : demi-vie 35-45 h, généralement 1 prise/jour le soir",
-                    "Acénocoumarol (Sintrom 4 mg) : demi-vie 8-11 h, peut nécessiter 2 prises/jour pour stabilité INR",
-                    "Tous les AVK ont la même demi-vie d'environ 24 heures",
-                    "Fluindione (Préviscan®) : demi-vie 30-35 h, 1 prise/jour"
+                    "Warfarine (Coumadine®) : demi-vie de 35 à 45 heures, généralement 1 prise par jour le soir",
+                    "Acénocoumarol (Sintrom® 4 mg) : demi-vie de 8 à 11 heures, peut nécessiter 2 prises/jour pour la stabilité de l'INR",
+                    "Acénocoumarol (Sintrom®) : demi-vie de 35 à 45 heures, justifiant une prise quotidienne unique le matin à jeun",
+                    "Fluindione (Préviscan®) : demi-vie de 30 à 35 heures, généralement 1 prise par jour le soir"
                 ],
                 correct: [0, 1, 3],
                 explanation: "Les 3 AVK français ont des demi-vies différentes (RCP officiels base-donnees-publique.medicaments.gouv.fr) : warfarine 35-45 h (1×/j), acénocoumarol 8-11 h (1-2×/j selon dose, le Sintrom 4 mg étant souvent fractionné), fluindione 30-35 h (1×/j). La demi-vie courte du Sintrom 4 mg explique des variations d'INR plus rapides en cas d'oubli ou retard. Source : RCP Coumadine, Sintrom et Préviscan — base-donnees-publique.medicaments.gouv.fr"
@@ -813,12 +813,12 @@
                 type: "QCU",
                 question: "Concernant le Préviscan® (fluindione), quelle est la situation depuis le 1er décembre 2018 ?",
                 options: [
-                    "Il a été complètement retiré du marché français",
-                    "Il ne peut plus être instauré en 1ère intention, mais peut être maintenu chez les patients déjà équilibrés depuis > 6 mois",
-                    "Il est devenu l'AVK de référence en France",
-                    "Il n'a aucune restriction d'usage actuellement"
+                    "Il a été complètement retiré du marché français en raison de réactions immuno-allergiques graves observées en pharmacovigilance",
+                    "Il est devenu l'AVK de référence en France et doit être préféré à la warfarine pour toute nouvelle instauration",
+                    "Il ne peut plus être instauré en 1ère intention, mais peut être maintenu chez les patients déjà équilibrés depuis plus de 6 mois",
+                    "Il reste prescrit sans aucune restriction d'usage et toute instauration en 1ère intention est encore possible librement"
                 ],
-                correct: [1],
+                correct: [2],
                 explanation: "ANSM 1er décembre 2018 : restriction d'instauration de Préviscan en 1ère intention en raison de réactions immuno-allergiques graves (néphropathie tubulo-interstitielle, DRESS, atteintes hépatiques) survenant essentiellement durant les 6 premiers mois. Maintien possible chez les patients déjà équilibrés depuis > 6 mois et bien tolérants. Pour toute nouvelle instauration : préférer warfarine ou acénocoumarol. Source : ANSM, point d'information du 27 novembre 2018."
             },
             {
@@ -839,10 +839,10 @@
                 type: "QCU",
                 question: "Un patient sous AVK présente des vomissements de sang (hématémèse). Quelle est la conduite IMMÉDIATE au comptoir ?",
                 options: [
-                    "Doubler la dose d'AVK pour compenser la perte sanguine",
-                    "Donner de la vitamine K en automédication immédiate",
-                    "Appel SAMU 15 IMMÉDIAT, garder le patient au calme, allonger uniquement si malaise/pâleur, conserver ordonnance et carnet AVK pour les secours",
-                    "Attendre le prochain rendez-vous médecin"
+                    "Doubler la dose d'AVK ce soir pour compenser la perte sanguine et reconstituer rapidement les facteurs de coagulation",
+                    "Délivrer de la vitamine K orale en automédication immédiate (10 mg) pour neutraliser l'effet de l'AVK avant tout transfert",
+                    "Appel SAMU 15 immédiat, garder le patient au calme, allonger si malaise ou pâleur, conserver ordonnance et carnet AVK pour les secours",
+                    "Conseiller un repos à domicile et attendre le prochain rendez-vous médecin programmé pour une évaluation clinique posée"
                 ],
                 correct: [2],
                 explanation: "Hémorragie majeure (hématémèse, méléna, hématurie macroscopique, hémoptysie, hémorragie cérébro-méningée, instabilité hémodynamique) = urgence vitale → SAMU 15 immédiat. Allongement avec jambes surélevées seulement en cas de malaise/choc (sinon position de confort, PLS si vomissements). L'apport de vitamine K (orale 1-5 mg / IV en hôpital) et de PPSB (Kaskadil®, Octaplex®, Confidex®) sont des actes médicaux, pas officinaux. Source : HAS « Prise en charge des surdosages en AVK » 2008, GIHP."
@@ -852,12 +852,12 @@
                 type: "QCU",
                 question: "Une patiente sous Coumadine® se plaint d'une mycose buccale et demande du Daktarin® gel buccal en automédication. Quelle est votre attitude ?",
                 options: [
-                    "Délivrer sans problème, c'est un traitement local",
-                    "REFUSER : contre-indication absolue, risque hémorragique grave — proposer une alternative (nystatine - Mycostatine®) avec avis médecin",
-                    "Délivrer mais réduire la durée à 3 jours",
-                    "Délivrer mais doubler la dose d'AVK pour compenser"
+                    "Refuser la délivrance : contre-indication absolue avec les AVK, risque hémorragique grave — proposer la nystatine (Mycostatine®) avec avis médical",
+                    "Délivrer le Daktarin® sans problème : voie locale, donc passage systémique négligeable et absence d'interaction cliniquement significative",
+                    "Refuser la délivrance et orienter aux urgences immédiatement, le miconazole local pouvant déclencher une hémorragie aiguë dans l'heure",
+                    "Délivrer le Daktarin® en réduisant la durée à 3 jours et en doublant la dose d'AVK ce soir pour compenser l'inhibition enzymatique"
                 ],
-                correct: [1],
+                correct: [0],
                 explanation: "Daktarin® (miconazole) gel buccal : CONTRE-INDICATION ABSOLUE avec AVK (RCP Daktarin section 4.3, Thésaurus ANSM). Même par voie locale, le miconazole inhibe le CYP2C9 hépatique → augmentation MAJEURE de l'effet anticoagulant → risque d'hémorragies imprévisibles, éventuellement graves. Alternative possible avec avis médical : nystatine (Mycostatine®) ou amphotéricine B locale, sans interaction documentée. Refus systématique au comptoir."
             },
             {
@@ -865,10 +865,10 @@
                 type: "QCU",
                 question: "Un patient sous warfarine demande du millepertuis pour son moral en automédication. Que faites-vous ?",
                 options: [
-                    "Délivrer, c'est une plante naturelle sans risque",
-                    "Délivrer mais conseiller un contrôle INR dans 3 mois",
-                    "REFUSER : Association déconseillée selon Thésaurus ANSM 2023 — le millepertuis est un inducteur enzymatique qui diminue l'effet AVK et expose au risque thrombotique",
-                    "Délivrer si le patient est très demandeur"
+                    "Délivrer le millepertuis sans crainte : c'est une plante naturelle, donc dépourvue d'interaction médicamenteuse significative avec la warfarine",
+                    "Délivrer le millepertuis mais conseiller un contrôle INR dans 3 mois pour vérifier la stabilité de l'anticoagulation à distance",
+                    "Refuser la délivrance : association déconseillée (Thésaurus ANSM 2023), inducteur enzymatique qui diminue l'effet AVK et expose au risque thrombotique",
+                    "Refuser la délivrance car le millepertuis potentialise l'effet anticoagulant de la warfarine et expose à un risque hémorragique majeur"
                 ],
                 correct: [2],
                 explanation: "Millepertuis (Hypericum perforatum) + AVK : Association déconseillée selon le Thésaurus ANSM des Interactions Médicamenteuses (août 2023). Inducteur enzymatique puissant (CYP3A4/2C9) → ↓ effet AVK → risque thrombotique (AVC, embolie). Ne JAMAIS conseiller au comptoir chez patient AVK. Si le patient en a déjà pris, contrôle INR rapproché conseillé. Vigilance également sur les compléments alimentaires « équilibre nerveux », « anti-stress », « sommeil » qui peuvent en contenir. Source : Thésaurus ANSM 2023 (monographie millepertuis) + RCP Coumadine section 4.5."
@@ -904,10 +904,10 @@
                 type: "QCU",
                 question: "M. R., 70 ans, sous Coumadine, demande du Doliprane® après s'être cogné dans une porte la veille (pas de blessure ouverte). Quelle est l'attitude correcte ?",
                 options: [
-                    "Refuser tout antalgique, l'orienter aux urgences",
-                    "Délivrer du paracétamol (dose efficace recommandée 3 g/j ; max RCP 4 g/j adulte sans facteur de risque), vérifier l'absence d'hématome volumineux ou de signe neurologique, refuser AINS et aspirine",
-                    "Conseiller un AINS comme l'ibuprofène pour traiter l'inflammation",
-                    "Conseiller de l'aspirine pour fluidifier davantage le sang"
+                    "Refuser tout antalgique au comptoir et l'orienter immédiatement aux urgences pour bilan en raison de son traitement anticoagulant",
+                    "Délivrer du paracétamol (3 g/j recommandés, max 4 g/j RCP), vérifier l'absence d'hématome volumineux ou de signe neurologique, refuser AINS et aspirine",
+                    "Conseiller un AINS type ibuprofène 400 mg pendant 3 jours pour traiter l'inflammation et la douleur liées au choc subi la veille",
+                    "Conseiller de l'aspirine 500 mg, son effet antiagrégant fluidifie le sang et complète utilement l'action anticoagulante de l'AVK"
                 ],
                 correct: [1],
                 explanation: "Paracétamol = antalgique de 1ère intention chez patient AVK. Recommandation ANSM : 3 g/jour suffisent dans la majorité des cas chez l'adulte ; dose maximale RCP : 4 g/jour (à abaisser à 3 g/j en présence de facteur de risque hépatique : poids < 50 kg, alcoolisme chronique, dénutrition, insuffisance hépatocellulaire). Interaction AVK documentée à la dose maximale 4 g/j pendant au moins 4 jours (Thésaurus ANSM 2023) → Précaution d'emploi avec contrôle INR. À dose usuelle et durée courte, pas d'impact significatif. AINS et aspirine ≥ 1 g : CONTRE-INDIQUÉS (risque hémorragique). Toujours rechercher un hématome (notamment crânien si chute), un signe neurologique, vérifier au DP les médicaments récents. Si signe d'alerte : orienter aux urgences. Sources : RCP Doliprane / dossier ANSM paracétamol — https://ansm.sante.fr/dossiers-thematiques/paracetamol ; Thésaurus ANSM 2023."
@@ -917,10 +917,10 @@
                 type: "QCU",
                 question: "Une patiente FA sous warfarine vient avec un INR à 1,4 (cible 2-3). Que conseillez-vous ?",
                 options: [
-                    "Lui dire de doubler sa dose ce soir pour rattraper",
-                    "Lui conseiller d'arrêter complètement le traitement",
-                    "Ne pas modifier la dose seul, MSS au médecin pour ajustement, vérifier observance / interactions / alimentation récentes",
-                    "Lui donner de la vitamine K en supplément pour stabiliser"
+                    "Lui dire de doubler sa dose ce soir pour rattraper rapidement la cible 2-3 et limiter le risque thrombotique lié au sous-dosage",
+                    "Lui conseiller d'arrêter complètement le traitement puisque l'INR à 1,4 montre que l'anticoagulation n'est plus nécessaire chez cette patiente",
+                    "Ne pas modifier la dose seul, MSS au médecin pour ajustement, vérifier l'observance, les interactions et l'alimentation récente",
+                    "Lui délivrer de la vitamine K orale en supplément pour stabiliser le métabolisme et faire remonter rapidement l'INR vers la cible"
                 ],
                 correct: [2],
                 explanation: "INR < 2 chez patient FA = zone à risque thrombotique (sous-dosé, exposition à AVC). Conduite officinale : NE JAMAIS modifier la dose seul. MSS (Messagerie Sécurisée Santé) au médecin traitant pour ajustement. Investiguer la cause possible : oubli de prises, interaction nouvelle (millepertuis, ATB inducteur, rifampicine), changement alimentaire (cure verte ponctuelle, augmentation soudaine légumes verts), problème d'observance. Source : HAS « Fibrillation atriale - Guide du parcours de soins » 2014, en cohérence avec ESC 2020 FA Guidelines."
@@ -930,10 +930,10 @@
                 type: "QCU",
                 question: "Quelle est la BONNE stratégie alimentaire à conseiller à un patient sous AVK ?",
                 options: [
-                    "Éviter complètement tous les légumes verts pour stabiliser l'INR",
-                    "Faire des cures détox vertes 1 semaine par mois pour la santé",
-                    "Maintenir une alimentation STABLE et RÉGULIÈRE en vitamine K, sans cures ni évictions brutales — aucun aliment n'est interdit",
-                    "Manger un maximum de vitamine K pour saturer le système"
+                    "Éviter complètement tous les légumes verts (épinards, choux, brocolis, salades) pendant toute la durée du traitement pour stabiliser l'INR",
+                    "Faire une cure détox de jus verts une semaine par mois pour la santé hépatique et compenser l'effet du traitement anticoagulant",
+                    "Maintenir une alimentation stable et régulière en vitamine K, sans cures ni évictions brutales — aucun aliment n'est interdit",
+                    "Augmenter au maximum la consommation de vitamine K pour saturer le système et obtenir un effet AVK plus prévisible dans le temps"
                 ],
                 correct: [2],
                 explanation: "Aucun aliment n'est INTERDIT sous AVK. Le message clé : RÉGULARITÉ d'apport en vitamine K. C'est la VARIATION brutale (cure détox verte, éviction soudaine, prise massive ponctuelle) qui déstabilise l'INR, pas la quantité absolue. Conseiller au patient de répartir les légumes verts (choux, brocolis, épinards, salades) régulièrement sur la semaine. Source : ANSM brochure patient AVK 2018."
@@ -943,10 +943,10 @@
                 type: "QCU",
                 question: "Selon les recommandations HAS sur les surdosages AVK, à partir de quel seuil INR (sans saignement) la vitamine K orale est-elle envisagée en ambulatoire ?",
                 options: [
-                    "INR > 3 (hors zone cible)",
-                    "INR > 4",
-                    "INR ≥ 6 (1 à 2 mg de vitamine K per os, sur prescription)",
-                    "INR > 10 uniquement"
+                    "INR > 3 (dès la sortie de la zone cible 2-3, sur simple prescription du médecin traitant en ambulatoire)",
+                    "INR > 4 (vitamine K orale 1 à 2 mg systématique dès le franchissement de ce seuil, sans hospitalisation)",
+                    "INR ≥ 6 (vitamine K orale 1 à 2 mg per os sur prescription, après saut de prise selon protocole HAS 2008)",
+                    "INR > 10 uniquement (en deçà, simple saut de prise sans apport de vitamine K, même en cas d'INR très élevé)"
                 ],
                 correct: [2],
                 explanation: "Selon HAS 2008 (« Prise en charge des surdosages en AVK »), conduite ambulatoire selon INR sans saignement : INR < 4 → pas de vit K ; 4 ≤ INR < 6 → saut d'1 prise sans vit K ; 6 ≤ INR < 10 → arrêt + 1-2 mg vit K per os ; INR ≥ 10 → 5 mg vit K + hospitalisation à discuter. Toute hémorragie grave (quel que soit l'INR) : CCP/PPSB + 10 mg vit K IV en milieu hospitalier. La vitamine K orale (Vitamine K1 Roche solution buvable) est délivrée sur prescription uniquement."
