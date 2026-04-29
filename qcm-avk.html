@@ -668,15 +668,15 @@
             {
                 id: 9,
                 type: "QCM",
-                question: "Quelles sont les interactions médicamenteuses MAJEURES avec les AVK selon le Thésaurus ANSM ? (Plusieurs réponses possibles)",
+                question: "Quelles sont les interactions médicamenteuses à RISQUE avec les AVK selon le Thésaurus ANSM 2023 ? (Plusieurs réponses possibles)",
                 options: [
-                    "AINS (ibuprofène, kétoprofène, diclofénac...) — risque hémorragique majeur",
-                    "Miconazole (Daktarin® gel buccal y compris) — CONTRE-INDICATION absolue",
-                    "Paracétamol à dose usuelle ≤ 2 g/jour",
-                    "Cotrimoxazole (Bactrim®), métronidazole, fluoroquinolones, macrolides"
+                    "AINS classiques (ibuprofène, kétoprofène, diclofénac...) = Association déconseillée ; aspirine ≥ 1 g/prise = Contre-indication",
+                    "Miconazole (Daktarin® gel buccal y compris) = CONTRE-INDICATION absolue (seul azolé en CI)",
+                    "Paracétamol (antalgique de référence, sans interaction majeure aux doses usuelles)",
+                    "Cotrimoxazole (Bactrim®) = Association déconseillée ; macrolides, fluoroquinolones, amiodarone, fluconazole, voriconazole = Précaution d'emploi"
                 ],
                 correct: [0, 1, 3],
-                explanation: "Interactions selon Thésaurus ANSM : Miconazole = CI absolue (même gel buccal). Cotrimoxazole, métronidazole, azolés systémiques = déconseillés. Macrolides, fluoroquinolones, amiodarone = précaution avec contrôle INR à J3-J5. AINS et aspirine ≥ 1 g = CI/déconseillé. Le paracétamol ≤ 2 g/j est l'antalgique de 1ère intention (potentialisation possible si > 2 g/j ou > 4 jours, surveillance INR alors). NB : l'amoxicilline seule n'a PAS d'interaction majeure documentée — toute antibiothérapie peut cependant déstabiliser l'INR via la flore intestinale."
+                explanation: "Niveaux exacts du Thésaurus ANSM des Interactions Médicamenteuses (août 2023) — section AVK : (1) Miconazole = SEULE CI absolue parmi les azolés (même gel buccal Daktarin) ; fluconazole et voriconazole = Précaution d'emploi avec contrôle INR jusqu'à 8 j post-arrêt ; posaconazole/itraconazole = non listés nominativement. (2) Cotrimoxazole = Association déconseillée. (3) Métronidazole = Précaution d'emploi (RCP Coumadine, NON déconseillé comme parfois écrit). (4) Macrolides, fluoroquinolones, amiodarone = Précaution d'emploi (amiodarone : effet jusqu'à 4 semaines post-arrêt, demi-vie ~50 j). (5) AINS = Association déconseillée. Aspirine : ≥ 1 g/prise OU ≥ 3 g/j = CI ; 500 mg-< 3 g/j sans ATCD ulcère = Déconseillé ; antiagrégant 75-375 mg sans ATCD ulcère = À prendre en compte. (6) Paracétamol : interaction documentée à dose maximale (4 g/j pendant ≥ 4 jours) selon brochure ANSM AVK 2018 et Thésaurus 2023 — Précaution d'emploi avec contrôle INR. Aux doses usuelles (≤ 3 g/j sur quelques jours), pas d'impact significatif. Le seuil 2 g/j vient du RCP paracétamol pour patients à risque hépatique (poids < 50 kg, alcool, dénutrition), PAS de la brochure AVK. (7) Amoxicilline : pas d'interaction nominative dans le Thésaurus AVK ; toute antibiothérapie peut cependant déstabiliser l'INR via modification flore intestinale (surveillance générique conseillée). Source : https://ansm.sante.fr/uploads/2023/08/18/20230818-thesaurus-referentiel-des-interaction-medicamenteuses-aout-2023.pdf"
             },
             {
                 id: 10,
@@ -709,13 +709,13 @@
                 type: "QCU",
                 question: "Un patient sous AVK doit-il porter une carte d'anticoagulant ?",
                 options: [
-                    "Non, c'est optionnel",
-                    "Oui, recommandée mais non obligatoire — à la discrétion du patient",
-                    "Oui, OBLIGATOIRE - à porter en permanence",
-                    "Uniquement si INR instable"
+                    "Non, c'est optionnel et accessoire",
+                    "Oui, FORTEMENT RECOMMANDÉE par l'ANSM — à porter en permanence pour signaler le traitement à tout professionnel de santé en cas d'urgence",
+                    "Uniquement si INR instable",
+                    "Uniquement pour les patients ayant déjà eu un accident hémorragique"
                 ],
-                correct: [2],
-                explanation: "La carte d'anticoagulant est OBLIGATOIRE pour tout patient sous AVK. Elle doit être portée EN PERMANENCE et présentée à tout professionnel de santé (médecin, dentiste, urgences). Elle contient les informations vitales en cas d'urgence."
+                correct: [1],
+                explanation: "La carte d'anticoagulant est FORTEMENT RECOMMANDÉE par l'ANSM pour tout patient sous AVK (référence : Carnet de suivi AVK ANSM 2018). Elle n'est pas légalement obligatoire en France, mais elle relève du standard of care et doit être portée en permanence. Elle contient les informations vitales (molécule, indication, contacts médecin/laboratoire) à présenter à tout professionnel de santé (médecin, dentiste, urgences, anesthésiste) en cas d'urgence ou avant tout acte invasif."
             },
             {
                 id: 13,
@@ -905,12 +905,12 @@
                 question: "M. R., 70 ans, sous Coumadine, demande du Doliprane® après s'être cogné dans une porte la veille (pas de blessure ouverte). Quelle est l'attitude correcte ?",
                 options: [
                     "Refuser tout antalgique, l'orienter aux urgences",
-                    "Délivrer du paracétamol jusqu'à 2 g/jour, vérifier l'absence d'hématome volumineux ou de signe neurologique, refuser AINS et aspirine",
+                    "Délivrer du paracétamol à dose usuelle (max 3 g/j chez l'adulte sans facteur de risque), vérifier l'absence d'hématome volumineux ou de signe neurologique, refuser AINS et aspirine",
                     "Conseiller un AINS comme l'ibuprofène pour traiter l'inflammation",
                     "Conseiller de l'aspirine pour fluidifier davantage le sang"
                 ],
                 correct: [1],
-                explanation: "Paracétamol jusqu'à 2 g/jour : antalgique de 1ère intention chez patient AVK (ANSM brochure patient AVK 2018). Au-delà (> 2 g/j) ou usage prolongé > 4 jours : surveillance INR conseillée (potentialisation possible). AINS et aspirine ≥ 1 g : CONTRE-INDIQUÉS (risque hémorragique). Toujours rechercher un hématome (notamment crânien si chute), un signe neurologique, vérifier au DP les médicaments récents. Si signe d'alerte : orienter aux urgences."
+                explanation: "Paracétamol = antalgique de 1ère intention chez patient AVK. Dose maximale ANSM 2024 : 3 g/jour chez l'adulte sans facteur de risque (poids < 50 kg, alcoolisme chronique, dénutrition, insuffisance hépatocellulaire). Interaction AVK documentée à la dose maximale 4 g/j pendant au moins 4 jours (Thésaurus ANSM 2023, brochure ANSM AVK 2018) → Précaution d'emploi avec contrôle INR. À dose usuelle et durée courte, pas d'impact significatif. AINS et aspirine ≥ 1 g : CONTRE-INDIQUÉS (risque hémorragique). Toujours rechercher un hématome (notamment crânien si chute), un signe neurologique, vérifier au DP les médicaments récents. Si signe d'alerte : orienter aux urgences. Source : https://www.omedit-normandie.fr/media-files/24150/carnet-suivi-avk-2018.pdf"
             },
             {
                 id: 28,
