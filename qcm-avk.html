@@ -444,8 +444,8 @@
                 <div class="progress-fill" id="progressFill"></div>
             </div>
             <div class="progress-text">
-                <span id="progressText">Question 1/16</span>
-                <span id="scoreText">Score: 0/16</span>
+                <span id="progressText">Question 1/31</span>
+                <span id="scoreText">Score: 0/31</span>
             </div>
         </div>
 
@@ -598,7 +598,7 @@
                     "INR 4-5"
                 ],
                 correct: [1],
-                explanation: "La zone thérapeutique standard est INR 2-3 pour la majorité des indications (fibrillation auriculaire, MTEV). Certaines situations à haut risque thrombotique (valves mécaniques, SAPL) nécessitent un INR cible plus élevé (3-4,5)."
+                explanation: "La zone thérapeutique standard est INR 2-3 pour la majorité des indications (FA, MTEV). Pour les valves cardiaques mécaniques, la cible varie de 2,5 à 4,0 selon la thrombogénicité de la prothèse et les facteurs de risque patient (ESC/EACTS Guidelines 2021, Eur Heart J 2022;43:561). Pour le SAPL à haut risque, une cible 3,0-4,0 peut être envisagée. La fourchette 3-4,5 (ACCP historique) n'apparaît plus dans les recommandations européennes 2021."
             },
             {
                 id: 4,
@@ -668,15 +668,15 @@
             {
                 id: 9,
                 type: "QCM",
-                question: "Quelles sont les interactions médicamenteuses MAJEURES avec les AVK ? (Plusieurs réponses possibles)",
+                question: "Quelles sont les interactions médicamenteuses MAJEURES avec les AVK selon le Thésaurus ANSM ? (Plusieurs réponses possibles)",
                 options: [
-                    "AINS (ibuprofène, kétoprofène...)",
-                    "Antibiotiques (notamment amoxicilline, macrolides)",
-                    "Paracétamol à dose usuelle",
-                    "Antifongiques azolés"
+                    "AINS (ibuprofène, kétoprofène, diclofénac...) — risque hémorragique majeur",
+                    "Miconazole (Daktarin® gel buccal y compris) — CONTRE-INDICATION absolue",
+                    "Paracétamol à dose usuelle ≤ 2 g/jour",
+                    "Cotrimoxazole (Bactrim®), métronidazole, fluoroquinolones, macrolides"
                 ],
                 correct: [0, 1, 3],
-                explanation: "Interactions majeures AVK : AINS (risque hémorragique ++), antibiotiques/antifongiques (augmentent effet AVK), amiodarone, millepertuis. Le paracétamol à dose usuelle (≤3g/j) est compatible. TOUJOURS vérifier les interactions avant toute co-prescription."
+                explanation: "Interactions selon Thésaurus ANSM : Miconazole = CI absolue (même gel buccal). Cotrimoxazole, métronidazole, azolés systémiques = déconseillés. Macrolides, fluoroquinolones, amiodarone = précaution avec contrôle INR à J3-J5. AINS et aspirine ≥ 1 g = CI/déconseillé. Le paracétamol ≤ 2 g/j est l'antalgique de 1ère intention (potentialisation possible si > 2 g/j ou > 4 jours, surveillance INR alors). NB : l'amoxicilline seule n'a PAS d'interaction majeure documentée — toute antibiothérapie peut cependant déstabiliser l'INR via la flore intestinale."
             },
             {
                 id: 10,
@@ -767,7 +767,202 @@
                     "Facturation libre"
                 ],
                 correct: [2],
-                explanation: "Facturation AVK Année 1 : TAC (adhésion traceur 0,01€, AMO 100%) + 3 entretiens ASI (15€ + 15€ + 20€, AMO 70%). Années suivantes : 2 entretiens ASS (10€ + 20€). Actes isolés, tiers payant, RPPS pharmacien."
+                explanation: "Facturation AVK Année 1 : TAC (adhésion traceur 0,01€, AMO 100%) + 3 entretiens ASI (15€ + 15€ + 20€, AMO 70%). Années suivantes : 2 entretiens ASS (10€ + 20€). Actes isolés, tiers payant, RPPS pharmacien. Source : Avenant n°1 Convention nationale pharmaceutique du 10 juin 2024 (JO 7 juillet 2024)."
+            },
+            {
+                id: 17,
+                type: "QCU",
+                question: "Sur quoi agissent les AVK au niveau moléculaire ?",
+                options: [
+                    "Ils inhibent directement la thrombine (facteur IIa) circulante",
+                    "Ils bloquent le facteur Xa de manière directe",
+                    "Ils inhibent l'enzyme VKORC1 (Vitamin K Epoxide Reductase Complex 1) qui régénère la vitamine K active",
+                    "Ils détruisent les plaquettes circulantes"
+                ],
+                correct: [2],
+                explanation: "Les AVK inhibent VKORC1, l'enzyme hépatique qui régénère la vitamine K active à partir de sa forme oxydée. Sans vit K active, la γ-carboxylation hépatique des facteurs II, VII, IX, X et des protéines C et S est bloquée → ces facteurs sont produits mais inactifs → anticoagulation. Source : RCP Coumadine ANSM (section 5.1 Pharmacodynamie), Vidal monographie warfarine."
+            },
+            {
+                id: 18,
+                type: "QCU",
+                question: "Combien de temps faut-il pour obtenir l'effet anticoagulant PLEIN d'un AVK après instauration ?",
+                options: [
+                    "Quelques heures (effet immédiat)",
+                    "Environ 1 jour",
+                    "3 à 5 jours",
+                    "2 semaines minimum"
+                ],
+                correct: [2],
+                explanation: "L'effet anticoagulant complet s'installe en 3 à 5 jours (brochure patient ANSM AVK 2018). Ce délai s'explique par la demi-vie longue du facteur II (prothrombine, ~60-72h) qui doit être progressivement éliminé : il faut ~5 demi-vies pour épuration. C'est pourquoi un relais par héparine est souvent nécessaire à l'instauration chez un patient à haut risque thrombotique."
+            },
+            {
+                id: 19,
+                type: "QCM",
+                question: "Concernant les demi-vies des AVK français, quelles affirmations sont VRAIES ? (Plusieurs réponses possibles)",
+                options: [
+                    "Warfarine (Coumadine®) : demi-vie 35-45 h, généralement 1 prise/jour le soir",
+                    "Acénocoumarol (Sintrom 4 mg) : demi-vie 8-11 h, peut nécessiter 2 prises/jour pour stabilité INR",
+                    "Tous les AVK ont la même demi-vie d'environ 24 heures",
+                    "Fluindione (Préviscan®) : demi-vie environ 31 h, 1 prise/jour"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Les 3 AVK français ont des demi-vies différentes (RCP base-donnees-publique.medicaments.gouv.fr) : warfarine 35-45h (1×/j), acénocoumarol 8-11h (1-2×/j selon dose, le Sintrom 4 mg étant souvent fractionné), fluindione ~31h (1×/j). La demi-vie courte du Sintrom 4 mg explique des variations d'INR plus rapides en cas d'oubli ou retard."
+            },
+            {
+                id: 20,
+                type: "QCU",
+                question: "Concernant le Préviscan® (fluindione), quelle est la situation depuis le 1er décembre 2018 ?",
+                options: [
+                    "Il a été complètement retiré du marché français",
+                    "Il ne peut plus être instauré en 1ère intention, mais peut être maintenu chez les patients déjà équilibrés depuis > 6 mois",
+                    "Il est devenu l'AVK de référence en France",
+                    "Il n'a aucune restriction d'usage actuellement"
+                ],
+                correct: [1],
+                explanation: "ANSM 1er décembre 2018 : restriction d'instauration de Préviscan en 1ère intention en raison de réactions immuno-allergiques graves (néphropathie tubulo-interstitielle, DRESS, atteintes hépatiques) survenant essentiellement durant les 6 premiers mois. Maintien possible chez les patients déjà équilibrés depuis > 6 mois et bien tolérants. Pour toute nouvelle instauration : préférer warfarine ou acénocoumarol. Source : ANSM, point d'information du 27 novembre 2018."
+            },
+            {
+                id: 21,
+                type: "QCM",
+                question: "Pendant les 6 premiers mois sous Préviscan, quels signes doivent ALERTER le patient et déclencher un appel médical immédiat ? (Plusieurs réponses possibles)",
+                options: [
+                    "Fièvre inexpliquée > 38°C",
+                    "Éruption cutanée, urticaire, œdème du visage ou du cou",
+                    "Mal de tête léger occasionnel sans autre signe",
+                    "Diminution importante du volume des urines, fatigue inhabituelle, gêne respiratoire"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Signes d'alerte des réactions immuno-allergiques au Préviscan dans les 6 premiers mois (ANSM courrier aux professionnels novembre 2018) : Fièvre inexpliquée, éruption Cutanée/urticaire/œdème (DRESS, syndromes sévères), atteinte Rénale (oligurie, ↓ volume urinaire), Fatigue marquée, dyspnée. Mnémonique pédagogique : « FRÉ-CU-RÉ-FA ». Une céphalée légère seule n'est pas spécifique. NE PAS arrêter le traitement seul (risque thrombotique) — appeler le médecin."
+            },
+            {
+                id: 22,
+                type: "QCU",
+                question: "Un patient sous AVK présente des vomissements de sang (hématémèse). Quelle est la conduite IMMÉDIATE au comptoir ?",
+                options: [
+                    "Doubler la dose d'AVK pour compenser la perte sanguine",
+                    "Donner de la vitamine K en automédication immédiate",
+                    "Appel SAMU 15 IMMÉDIAT, garder le patient au calme, allonger uniquement si malaise/pâleur, conserver ordonnance et carnet AVK pour les secours",
+                    "Attendre le prochain rendez-vous médecin"
+                ],
+                correct: [2],
+                explanation: "Hémorragie majeure (hématémèse, méléna, hématurie macroscopique, hémoptysie, hémorragie cérébro-méningée, instabilité hémodynamique) = urgence vitale → SAMU 15 immédiat. Allongement avec jambes surélevées seulement en cas de malaise/choc (sinon position de confort, PLS si vomissements). L'apport de vitamine K (orale 1-5 mg / IV en hôpital) et de PPSB (Kaskadil®, Octaplex®, Confidex®) sont des actes médicaux, pas officinaux. Source : HAS « Prise en charge des surdosages en AVK » 2008, GIHP."
+            },
+            {
+                id: 23,
+                type: "QCU",
+                question: "Une patiente sous Coumadine® se plaint d'une mycose buccale et demande du Daktarin® gel buccal en automédication. Quelle est votre attitude ?",
+                options: [
+                    "Délivrer sans problème, c'est un traitement local",
+                    "REFUSER : contre-indication absolue, risque hémorragique grave — proposer une alternative (nystatine - Mycostatine®) avec avis médecin",
+                    "Délivrer mais réduire la durée à 3 jours",
+                    "Délivrer mais doubler la dose d'AVK pour compenser"
+                ],
+                correct: [1],
+                explanation: "Daktarin® (miconazole) gel buccal : CONTRE-INDICATION ABSOLUE avec AVK (RCP Daktarin section 4.3, Thésaurus ANSM). Même par voie locale, le miconazole inhibe le CYP2C9 hépatique → augmentation MAJEURE de l'effet anticoagulant → risque d'hémorragies imprévisibles, éventuellement graves. Alternative possible avec avis médical : nystatine (Mycostatine®) ou amphotéricine B locale, sans interaction documentée. Refus systématique au comptoir."
+            },
+            {
+                id: 24,
+                type: "QCU",
+                question: "Un patient sous warfarine demande du millepertuis pour son moral en automédication. Que faites-vous ?",
+                options: [
+                    "Délivrer, c'est une plante naturelle sans risque",
+                    "Délivrer mais conseiller un contrôle INR dans 3 mois",
+                    "REFUSER : association déconseillée à contre-indiquée — le millepertuis diminue l'effet AVK et expose au risque thrombotique",
+                    "Délivrer si le patient est très demandeur"
+                ],
+                correct: [2],
+                explanation: "Millepertuis (Hypericum perforatum) : association déconseillée à contre-indiquée avec les AVK. C'est un puissant inducteur enzymatique (CYP3A4/2C9) → ↓ effet AVK → risque thrombotique (AVC, embolie). À ne JAMAIS conseiller au comptoir chez patient AVK. Vigilance également sur les compléments alimentaires « équilibre nerveux », « anti-stress », « sommeil » qui peuvent en contenir. Source : Thésaurus ANSM, RCP Coumadine section 4.5."
+            },
+            {
+                id: 25,
+                type: "QCU",
+                question: "Un patient sous AVK reçoit une nouvelle prescription de Bactrim® (cotrimoxazole). Quand recommandez-vous le contrôle INR ?",
+                options: [
+                    "Aucun contrôle nécessaire, c'est juste un antibiotique",
+                    "À J3-J5 après l'instauration ET 8 jours après l'arrêt du Bactrim",
+                    "Uniquement à la fin du traitement antibiotique",
+                    "Une fois par mois comme d'habitude"
+                ],
+                correct: [1],
+                explanation: "Cotrimoxazole + AVK : association déconseillée (RCP Bactrim 4.5). Contrôle INR rapproché à J3-J5 après instauration. Le RCP Bactrim recommande aussi un contrôle 8 jours APRÈS l'arrêt car l'effet sur le métabolisme persiste. Adaptation éventuelle de la posologie de l'AVK pendant et après. Mécanisme : inhibition CYP2C9 + déplacement de la liaison protéique. Source : RCP Bactrim ANSM, Thésaurus interactions ANSM."
+            },
+            {
+                id: 26,
+                type: "QCM",
+                question: "Au comptoir, sur quelles 3 sources d'information s'appuyer pour repérer un patient AVK à risque ? (Plusieurs réponses possibles)",
+                options: [
+                    "Ce que dit le patient (« je me suis cogné », « j'ai des bleus », « je saigne du nez »)",
+                    "Ce qu'on observe (ecchymoses inhabituelles, pâleur, sueurs, saignement gingival visible)",
+                    "L'examen biologique sanguin du patient au comptoir",
+                    "La consultation du Dossier Pharmaceutique (DP) — délivrances AVK, ATB récent, OTC à risque"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Mnémonique pédagogique « 3V » (non officielle) : Verbe (ce que dit le patient), Vue (examen visuel), Visite DP (consultation Dossier Pharmaceutique). Le DP est un outil officiel du Conseil National de l'Ordre des Pharmaciens (ordre.pharmacien.fr) qui permet de tracer les délivrances et identifier les interactions à risque. L'examen biologique sanguin n'est PAS du ressort du pharmacien d'officine."
+            },
+            {
+                id: 27,
+                type: "QCU",
+                question: "M. R., 70 ans, sous Coumadine, demande du Doliprane® après s'être cogné dans une porte la veille (pas de blessure ouverte). Quelle est l'attitude correcte ?",
+                options: [
+                    "Refuser tout antalgique, l'orienter aux urgences",
+                    "Délivrer du paracétamol jusqu'à 2 g/jour, vérifier l'absence d'hématome volumineux ou de signe neurologique, refuser AINS et aspirine",
+                    "Conseiller un AINS comme l'ibuprofène pour traiter l'inflammation",
+                    "Conseiller de l'aspirine pour fluidifier davantage le sang"
+                ],
+                correct: [1],
+                explanation: "Paracétamol jusqu'à 2 g/jour : antalgique de 1ère intention chez patient AVK (ANSM brochure patient AVK 2018). Au-delà (> 2 g/j) ou usage prolongé > 4 jours : surveillance INR conseillée (potentialisation possible). AINS et aspirine ≥ 1 g : CONTRE-INDIQUÉS (risque hémorragique). Toujours rechercher un hématome (notamment crânien si chute), un signe neurologique, vérifier au DP les médicaments récents. Si signe d'alerte : orienter aux urgences."
+            },
+            {
+                id: 28,
+                type: "QCU",
+                question: "Une patiente FA sous warfarine vient avec un INR à 1,4 (cible 2-3). Que conseillez-vous ?",
+                options: [
+                    "Lui dire de doubler sa dose ce soir pour rattraper",
+                    "Lui conseiller d'arrêter complètement le traitement",
+                    "Ne pas modifier la dose seul, MSS au médecin pour ajustement, vérifier observance / interactions / alimentation récentes",
+                    "Lui donner de la vitamine K en supplément pour stabiliser"
+                ],
+                correct: [2],
+                explanation: "INR < 2 chez patient FA = zone à risque thrombotique (sous-dosé, exposition à AVC). Conduite officinale : NE JAMAIS modifier la dose seul. MSS (Messagerie Sécurisée Santé) au médecin traitant pour ajustement. Investiguer la cause possible : oubli de prises, interaction nouvelle (millepertuis, ATB inducteur, rifampicine), changement alimentaire (cure verte ponctuelle, augmentation soudaine légumes verts), problème d'observance. Source : HAS « Fibrillation atriale » 2014."
+            },
+            {
+                id: 29,
+                type: "QCU",
+                question: "Quelle est la BONNE stratégie alimentaire à conseiller à un patient sous AVK ?",
+                options: [
+                    "Éviter complètement tous les légumes verts pour stabiliser l'INR",
+                    "Faire des cures détox vertes 1 semaine par mois pour la santé",
+                    "Maintenir une alimentation STABLE et RÉGULIÈRE en vitamine K, sans cures ni évictions brutales — aucun aliment n'est interdit",
+                    "Manger un maximum de vitamine K pour saturer le système"
+                ],
+                correct: [2],
+                explanation: "Aucun aliment n'est INTERDIT sous AVK. Le message clé : RÉGULARITÉ d'apport en vitamine K. C'est la VARIATION brutale (cure détox verte, éviction soudaine, prise massive ponctuelle) qui déstabilise l'INR, pas la quantité absolue. Conseiller au patient de répartir les légumes verts (choux, brocolis, épinards, salades) régulièrement sur la semaine. Source : ANSM brochure patient AVK 2018."
+            },
+            {
+                id: 30,
+                type: "QCU",
+                question: "Selon les recommandations HAS sur les surdosages AVK, à partir de quel seuil INR (sans saignement) la vitamine K orale est-elle envisagée en ambulatoire ?",
+                options: [
+                    "INR > 3 (hors zone cible)",
+                    "INR > 4",
+                    "INR ≥ 6 (1 à 2 mg de vitamine K per os, sur prescription)",
+                    "INR > 10 uniquement"
+                ],
+                correct: [2],
+                explanation: "Selon HAS 2008 (« Prise en charge des surdosages en AVK »), conduite ambulatoire selon INR sans saignement : INR < 4 → pas de vit K ; 4 ≤ INR < 6 → saut d'1 prise sans vit K ; 6 ≤ INR < 10 → arrêt + 1-2 mg vit K per os ; INR ≥ 10 → 5 mg vit K + hospitalisation à discuter. Toute hémorragie grave (quel que soit l'INR) : CCP/PPSB + 10 mg vit K IV en milieu hospitalier. La vitamine K orale (Vitamine K1 Roche solution buvable) est délivrée sur prescription uniquement."
+            },
+            {
+                id: 31,
+                type: "QCM",
+                question: "Quelles questions clés poser SYSTÉMATIQUEMENT à un patient AVK lors de chaque délivrance ? (Plusieurs réponses possibles)",
+                options: [
+                    "« Quelle est votre cible INR et quel est votre dernier résultat ? »",
+                    "« Avez-vous votre carnet AVK et votre carte anticoagulant ? »",
+                    "« Quel est votre dernier examen sanguin complet (NFS, plaquettes, ionogramme) ? »",
+                    "« Avez-vous pris ou changé d'autres médicaments, plantes ou compléments récemment ? »"
+                ],
+                correct: [0, 1, 3],
+                explanation: "Les questions clés du mémo comptoir AVK : 1) Cible INR + dernier résultat ; 2) Carnet/carte AVK ; 3) Médicaments/plantes/compléments récents ; 4) Saignements inhabituels, bleus, fatigue ; 5) Date du prochain contrôle INR. L'examen sanguin complet (NFS, ionogramme) n'est pas du ressort officinal — on se concentre sur l'INR et les signaux de surdosage/sous-dosage. Source : référentiel ANSM AVK + Avenant n°1 Convention pharmaceutique 10/06/2024."
             }
         ];
 
