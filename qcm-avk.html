@@ -776,10 +776,10 @@
                 options: [
                     "Ils inhibent directement la thrombine (facteur IIa) circulante, comme le dabigatran (Pradaxa®)",
                     "Ils bloquent le facteur Xa activé de manière directe et réversible, comme l'apixaban et le rivaroxaban",
-                    "Ils inhibent l'enzyme VKORC1 hépatique qui régénère la vitamine K active à partir de sa forme oxydée",
-                    "Ils détruisent les plaquettes circulantes en perturbant leur agrégation au site de la lésion vasculaire"
+                    "Ils inhibent la γ-glutamyl carboxylase hépatique, l'enzyme qui carboxyle directement les facteurs II, VII, IX, X",
+                    "Ils inhibent l'enzyme VKORC1 hépatique qui régénère la vitamine K active à partir de sa forme oxydée"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "Les AVK inhibent VKORC1, l'enzyme hépatique qui régénère la vitamine K active à partir de sa forme oxydée. Sans vit K active, la γ-carboxylation hépatique des facteurs II, VII, IX, X et des protéines C et S est bloquée → ces facteurs sont produits mais inactifs → anticoagulation. Source : RCP Coumadine ANSM (section 5.1 Pharmacodynamie), Vidal monographie warfarine."
             },
             {
@@ -787,12 +787,12 @@
                 type: "QCU",
                 question: "Combien de temps faut-il pour obtenir l'effet anticoagulant PLEIN d'un AVK après instauration ?",
                 options: [
-                    "Quelques heures (effet immédiat)",
-                    "Environ 1 jour",
-                    "3 à 5 jours",
-                    "2 semaines minimum"
+                    "Quelques heures, comparable au délai d'action des héparines non fractionnées en intraveineux",
+                    "Environ 24 heures, dès que la concentration plasmatique de l'AVK atteint son équilibre",
+                    "Au moins 10 à 14 jours, le temps que tous les facteurs vitamine K-dépendants soient totalement épuisés",
+                    "3 à 5 jours, le temps d'épuration des facteurs vitamine K-dépendants à demi-vie longue (notamment facteur II)"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "L'effet anticoagulant complet s'installe en 3 à 5 jours. Ce délai s'explique par la demi-vie longue du facteur II (prothrombine, ~60-72 h) qui doit être progressivement éliminé : il faut ~5 demi-vies pour épuration. C'est pourquoi un relais par héparine est souvent nécessaire à l'instauration chez un patient à haut risque thrombotique. Source : RCP Coumadine section 5.1 (Pharmacodynamie), pharmacologie classique (Goodman & Gilman's)."
             },
             {
@@ -841,10 +841,10 @@
                 options: [
                     "Doubler la dose d'AVK ce soir pour compenser la perte sanguine et reconstituer rapidement les facteurs de coagulation",
                     "Délivrer de la vitamine K orale en automédication immédiate (10 mg) pour neutraliser l'effet de l'AVK avant tout transfert",
-                    "Appel SAMU 15 immédiat, garder le patient au calme, allonger si malaise ou pâleur, conserver ordonnance et carnet AVK pour les secours",
-                    "Conseiller un repos à domicile et attendre le prochain rendez-vous médecin programmé pour une évaluation clinique posée"
+                    "Conseiller un repos à domicile et attendre le prochain rendez-vous médecin programmé pour une évaluation clinique posée",
+                    "Appel SAMU 15 immédiat, garder le patient au calme, allonger si malaise ou pâleur, conserver ordonnance et carnet AVK pour les secours"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "Hémorragie majeure (hématémèse, méléna, hématurie macroscopique, hémoptysie, hémorragie cérébro-méningée, instabilité hémodynamique) = urgence vitale → SAMU 15 immédiat. Allongement avec jambes surélevées seulement en cas de malaise/choc (sinon position de confort, PLS si vomissements). L'apport de vitamine K (orale 1-5 mg / IV en hôpital) et de PPSB (Kaskadil®, Octaplex®, Confidex®) sont des actes médicaux, pas officinaux. Source : HAS « Prise en charge des surdosages en AVK » 2008, GIHP."
             },
             {
@@ -867,10 +867,10 @@
                 options: [
                     "Délivrer le millepertuis sans crainte : c'est une plante naturelle, donc dépourvue d'interaction médicamenteuse significative avec la warfarine",
                     "Délivrer le millepertuis mais conseiller un contrôle INR dans 3 mois pour vérifier la stabilité de l'anticoagulation à distance",
-                    "Refuser la délivrance : association déconseillée (Thésaurus ANSM 2023), inducteur enzymatique qui diminue l'effet AVK et expose au risque thrombotique",
-                    "Refuser la délivrance car le millepertuis potentialise l'effet anticoagulant de la warfarine et expose à un risque hémorragique majeur"
+                    "Refuser la délivrance car le millepertuis potentialise l'effet anticoagulant de la warfarine et expose à un risque hémorragique majeur",
+                    "Refuser la délivrance : association déconseillée (Thésaurus ANSM 2023), inducteur enzymatique qui diminue l'effet AVK et expose au risque thrombotique"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "Millepertuis (Hypericum perforatum) + AVK : Association déconseillée selon le Thésaurus ANSM des Interactions Médicamenteuses (août 2023). Inducteur enzymatique puissant (CYP3A4/2C9) → ↓ effet AVK → risque thrombotique (AVC, embolie). Ne JAMAIS conseiller au comptoir chez patient AVK. Si le patient en a déjà pris, contrôle INR rapproché conseillé. Vigilance également sur les compléments alimentaires « équilibre nerveux », « anti-stress », « sommeil » qui peuvent en contenir. Source : Thésaurus ANSM 2023 (monographie millepertuis) + RCP Coumadine section 4.5."
             },
             {
@@ -919,10 +919,10 @@
                 options: [
                     "Lui dire de doubler sa dose ce soir pour rattraper rapidement la cible 2-3 et limiter le risque thrombotique lié au sous-dosage",
                     "Lui conseiller d'arrêter complètement le traitement puisque l'INR à 1,4 montre que l'anticoagulation n'est plus nécessaire chez cette patiente",
-                    "Ne pas modifier la dose seul, MSS au médecin pour ajustement, vérifier l'observance, les interactions et l'alimentation récente",
-                    "Lui délivrer de la vitamine K orale en supplément pour stabiliser le métabolisme et faire remonter rapidement l'INR vers la cible"
+                    "Lui délivrer de la vitamine K orale en supplément pour stabiliser le métabolisme et faire remonter rapidement l'INR vers la cible",
+                    "Ne pas modifier la dose seul, MSS au médecin pour ajustement, vérifier l'observance, les interactions et l'alimentation récente"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "INR < 2 chez patient FA = zone à risque thrombotique (sous-dosé, exposition à AVC). Conduite officinale : NE JAMAIS modifier la dose seul. MSS (Messagerie Sécurisée Santé) au médecin traitant pour ajustement. Investiguer la cause possible : oubli de prises, interaction nouvelle (millepertuis, ATB inducteur, rifampicine), changement alimentaire (cure verte ponctuelle, augmentation soudaine légumes verts), problème d'observance. Source : HAS « Fibrillation atriale - Guide du parcours de soins » 2014, en cohérence avec ESC 2020 FA Guidelines."
             },
             {
@@ -945,10 +945,10 @@
                 options: [
                     "INR > 3 (dès la sortie de la zone cible 2-3, sur simple prescription du médecin traitant en ambulatoire)",
                     "INR > 4 (vitamine K orale 1 à 2 mg systématique dès le franchissement de ce seuil, sans hospitalisation)",
-                    "INR ≥ 6 (vitamine K orale 1 à 2 mg per os sur prescription, après saut de prise selon protocole HAS 2008)",
-                    "INR > 10 uniquement (en deçà, simple saut de prise sans apport de vitamine K, même en cas d'INR très élevé)"
+                    "INR > 10 uniquement (en deçà, simple saut de prise sans apport de vitamine K, même en cas d'INR très élevé)",
+                    "INR ≥ 6 (vitamine K orale 1 à 2 mg per os sur prescription, après saut de prise selon protocole HAS 2008)"
                 ],
-                correct: [2],
+                correct: [3],
                 explanation: "Selon HAS 2008 (« Prise en charge des surdosages en AVK »), conduite ambulatoire selon INR sans saignement : INR < 4 → pas de vit K ; 4 ≤ INR < 6 → saut d'1 prise sans vit K ; 6 ≤ INR < 10 → arrêt + 1-2 mg vit K per os ; INR ≥ 10 → 5 mg vit K + hospitalisation à discuter. Toute hémorragie grave (quel que soit l'INR) : CCP/PPSB + 10 mg vit K IV en milieu hospitalier. La vitamine K orale (Vitamine K1 Roche solution buvable) est délivrée sur prescription uniquement."
             },
             {
